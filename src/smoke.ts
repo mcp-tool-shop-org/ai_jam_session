@@ -13,7 +13,7 @@ import {
   getSong,
   getStats,
   searchSongs,
-} from "ai-music-sheets";
+} from "@mcptoolshop/ai-music-sheets";
 import { createSession } from "./session.js";
 import { createMockVmpkConnector } from "./vmpk.js";
 import { parseNoteToMidi, midiToNoteName, safeParseNoteToken } from "./note-parser.js";

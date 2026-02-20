@@ -30,8 +30,8 @@ import {
   getStats,
   GENRES,
   DIFFICULTIES,
-} from "ai-music-sheets";
-import type { SongEntry, Difficulty } from "ai-music-sheets";
+} from "@mcptoolshop/ai-music-sheets";
+import type { SongEntry, Difficulty } from "@mcptoolshop/ai-music-sheets";
 import { safeParseMeasure } from "./note-parser.js";
 import type { ParseWarning } from "./types.js";
 

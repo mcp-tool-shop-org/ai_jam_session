@@ -18,7 +18,7 @@ import type {
   AsideDirective,
   AsideSink,
 } from "./types.js";
-import type { SongEntry } from "ai-music-sheets";
+import type { SongEntry } from "@mcptoolshop/ai-music-sheets";
 
 // ─── Console Hook (CLI / development) ───────────────────────────────────────
 

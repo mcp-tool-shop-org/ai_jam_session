@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getSong } from "ai-music-sheets";
+import { getSong } from "@mcptoolshop/ai-music-sheets";
 import {
   createConsoleTeachingHook,
   createSilentTeachingHook,

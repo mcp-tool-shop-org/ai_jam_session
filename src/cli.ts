@@ -19,8 +19,8 @@ import {
   getSongsByGenre,
   getStats,
   GENRES,
-} from "ai-music-sheets";
-import type { SongEntry, Genre } from "ai-music-sheets";
+} from "@mcptoolshop/ai-music-sheets";
+import type { SongEntry, Genre } from "@mcptoolshop/ai-music-sheets";
 import type { PlaybackProgress, PlaybackMode } from "./types.js";
 import { createVmpkConnector } from "./vmpk.js";
 import { createSession } from "./session.js";

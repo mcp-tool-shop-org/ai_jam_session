@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",
-    "ai-music-sheets": "file:../ai-music-sheets",
+    "@mcptoolshop/ai-music-sheets": "^1.0.0",
     "jzz": "^1.8.0",
     "zod": "^4.3.6"
   },

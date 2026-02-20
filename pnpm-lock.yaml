@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@mcptoolshop/ai-music-sheets':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@modelcontextprotocol/sdk':
         specifier: ^1.26.0
         version: 1.26.0(zod@4.3.6)
-      ai-music-sheets:
-        specifier: file:../ai-music-sheets
-        version: file:../ai-music-sheets
       jzz:
         specifier: ^1.8.0
         version: 1.9.6
@@ -200,6 +200,9 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@mcptoolshop/ai-music-sheets@1.0.0':
+    resolution: {integrity: sha512-sC2mE9z2E3+pNMRguH4aIJhEzx8mKC10zNSe5tP7L4l+QN8m1sNuHn5Hmlc3q4wKvyPZyC74MEfzgeNQR+0BjQ==}
 
   '@modelcontextprotocol/sdk@1.26.0':
     resolution: {integrity: sha512-Y5RmPncpiDtTXDbLKswIJzTqu2hyBKxTNsgKqKclDbhIgg1wgtf1fRuvxgTnRfcnxtvvgbIEcqUOzZrJ6iSReg==}
@@ -393,9 +396,6 @@ packages:
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
     engines: {node: '>= 0.6'}
-
-  ai-music-sheets@file:../ai-music-sheets:
-    resolution: {directory: ../ai-music-sheets, type: directory}
 
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
@@ -1057,6 +1057,8 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
+  '@mcptoolshop/ai-music-sheets@1.0.0': {}
+
   '@modelcontextprotocol/sdk@1.26.0(zod@4.3.6)':
     dependencies:
       '@hono/node-server': 1.19.9(hono@4.12.0)
@@ -1213,8 +1215,6 @@ snapshots:
     dependencies:
       mime-types: 3.0.2
       negotiator: 1.0.0
-
-  ai-music-sheets@file:../ai-music-sheets: {}
 
   ajv-formats@3.0.1(ajv@8.18.0):
     optionalDependencies:

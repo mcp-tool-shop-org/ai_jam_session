@@ -5,7 +5,7 @@
 //
 // Usage:
 //   import { createSession, createVmpkConnector } from "pianai";
-//   import { getSong } from "ai-music-sheets";
+//   import { getSong } from "@mcptoolshop/ai-music-sheets";
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Re-export ai-music-sheets for convenience
@@ -18,7 +18,7 @@ export {
   getStats,
   GENRES,
   DIFFICULTIES,
-} from "ai-music-sheets";
+} from "@mcptoolshop/ai-music-sheets";
 
 export type {
   SongEntry,
@@ -26,7 +26,7 @@ export type {
   MusicalLanguage,
   Genre,
   Difficulty,
-} from "ai-music-sheets";
+} from "@mcptoolshop/ai-music-sheets";
 
 // Export session engine
 export { createSession, SessionController } from "./session.js";
