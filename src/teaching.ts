@@ -7,6 +7,7 @@
 //   - ConsoleTeachingHook: logs to console (development/CLI)
 //   - SilentTeachingHook: no-op (testing/benchmarks)
 //   - CallbackTeachingHook: routes to custom callbacks (MCP/voice/aside)
+//   - SingAlongHook: narrates note names/solfege/contour during playback
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type {
@@ -332,6 +333,111 @@ export function createAsideTeachingHook(
         source: interjection.source,
         tags: [...baseTags, interjection.reason],
       });
+    },
+  };
+}
+
+// ─── Sing-Along Hook (note narration) ────────────────────────────────────────
+
+import {
+  measureToSingableText,
+  type SingAlongMode,
+} from "./note-parser.js";
+
+/** Options for the sing-along teaching hook. */
+export interface SingAlongHookOptions {
+  /** Sing-along mode (default: "note-names"). */
+  mode?: SingAlongMode;
+
+  /** Which hand(s) to narrate (default: "right"). */
+  hand?: "right" | "left" | "both";
+
+  /** Voice preset (default: undefined = server default). */
+  voice?: string;
+
+  /** Speech speed (default: 1.0). */
+  speechSpeed?: number;
+
+  /** Announce the measure number before notes (default: true). */
+  announceMeasureNumber?: boolean;
+
+  /** Speak completion message (default: true). */
+  speakCompletion?: boolean;
+}
+
+/**
+ * Sing-along teaching hook — narrates note names/solfege/contour/syllables
+ * from the actual measure data, synchronized with playback.
+ *
+ * Requires the full SongEntry to look up measure note data by measure number.
+ * Emits blocking VoiceDirectives on onMeasureStart so the voice speaks BEFORE
+ * the piano plays each measure.
+ *
+ * Composable with other hooks via composeTeachingHooks.
+ */
+export function createSingAlongHook(
+  sink: VoiceSink,
+  song: SongEntry,
+  options: SingAlongHookOptions = {}
+): TeachingHook & { directives: VoiceDirective[] } {
+  const {
+    mode = "note-names",
+    hand = "right",
+    voice,
+    speechSpeed = 1.0,
+    announceMeasureNumber = true,
+    speakCompletion = true,
+  } = options;
+
+  const directives: VoiceDirective[] = [];
+
+  // Pre-index measures by number for O(1) lookup
+  const measureMap = new Map<number, { rightHand: string; leftHand: string }>();
+  for (const m of song.measures) {
+    measureMap.set(m.number, { rightHand: m.rightHand, leftHand: m.leftHand });
+  }
+
+  async function emit(directive: VoiceDirective): Promise<void> {
+    directives.push(directive);
+    await sink(directive);
+  }
+
+  return {
+    directives,
+
+    async onMeasureStart(measureNumber, _teachingNote, _dynamics) {
+      const measure = measureMap.get(measureNumber);
+      if (!measure) return;
+
+      const singableText = measureToSingableText(measure, { mode, hand });
+      if (!singableText) return;
+
+      const prefix = announceMeasureNumber ? `Measure ${measureNumber}: ` : "";
+      await emit({
+        text: `${prefix}${singableText}`,
+        voice,
+        speed: speechSpeed,
+        blocking: true, // speak BEFORE piano plays
+      });
+    },
+
+    async onKeyMoment(_moment) {
+      // Sing-along hook does not speak key moments
+      // (compose with a voice hook if you want both)
+    },
+
+    async onSongComplete(measuresPlayed, songTitle) {
+      if (!speakCompletion) return;
+      await emit({
+        text: `Finished singing along to ${songTitle}! ${measuresPlayed} measures.`,
+        voice,
+        speed: speechSpeed,
+        blocking: false,
+      });
+    },
+
+    async push(_interjection) {
+      // Sing-along hook does not speak push interjections
     },
   };
 }

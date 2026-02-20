@@ -7,6 +7,7 @@ import {
   createCallbackTeachingHook,
   createVoiceTeachingHook,
   createAsideTeachingHook,
+  createSingAlongHook,
   composeTeachingHooks,
   detectKeyMoments,
 } from "./teaching.js";
@@ -392,5 +393,168 @@ describe("Voice + Session integration", () => {
     // Both hooks should have received events
     expect(voiceDirectives.length).toBeGreaterThan(0);
     expect(asideDirectives.length).toBeGreaterThan(0);
+  });
+});
+
+// ─── Sing-Along Hook ────────────────────────────────────────────────────────
+
+describe("SingAlongHook", () => {
+  it("produces note-name directives from measure data", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { mode: "note-names" });
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    expect(directives.length).toBe(1);
+    expect(directives[0].blocking).toBe(true);
+    expect(directives[0].text).toContain("Measure 1:");
+  });
+
+  it("produces solfege directives", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { mode: "solfege" });
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    expect(directives.length).toBe(1);
+    // Should contain solfege syllables
+    expect(directives[0].text).toMatch(/Do|Re|Mi|Fa|Sol|La|Ti/);
+  });
+
+  it("produces contour directives", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { mode: "contour" });
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    expect(directives.length).toBe(1);
+    expect(directives[0].text).toMatch(/up|down|same|hold/);
+  });
+
+  it("respects hand='left'", async () => {
+    const song = getSong("let-it-be")!;
+    const rhDirectives: VoiceDirective[] = [];
+    const lhDirectives: VoiceDirective[] = [];
+
+    const rhHook = createSingAlongHook(async (d) => { rhDirectives.push(d); }, song, { hand: "right" });
+    const lhHook = createSingAlongHook(async (d) => { lhDirectives.push(d); }, song, { hand: "left" });
+
+    await rhHook.onMeasureStart(1, undefined, undefined);
+    await lhHook.onMeasureStart(1, undefined, undefined);
+
+    expect(rhDirectives.length).toBe(1);
+    expect(lhDirectives.length).toBe(1);
+    // Different hands produce different text
+    expect(rhDirectives[0].text).not.toBe(lhDirectives[0].text);
+  });
+
+  it("respects hand='both'", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { hand: "both" });
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    expect(directives.length).toBe(1);
+    expect(directives[0].text).toContain("Left hand:");
+  });
+
+  it("skips key moments and push", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song);
+
+    await hook.onKeyMoment("test moment");
+    await hook.push({ text: "test", priority: "low", reason: "custom" });
+    expect(directives.length).toBe(0);
+  });
+
+  it("speaks completion when speakCompletion=true", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song);
+
+    await hook.onSongComplete(8, "Let It Be");
+    expect(directives.length).toBe(1);
+    expect(directives[0].text).toContain("Let It Be");
+    expect(directives[0].blocking).toBe(false);
+  });
+
+  it("skips completion when speakCompletion=false", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { speakCompletion: false });
+
+    await hook.onSongComplete(8, "Let It Be");
+    expect(directives.length).toBe(0);
+  });
+
+  it("uses custom voice and speed", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { voice: "af_aoede", speechSpeed: 0.8 });
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    expect(directives[0].voice).toBe("af_aoede");
+    expect(directives[0].speed).toBe(0.8);
+  });
+
+  it("records directives on the hook object", async () => {
+    const song = getSong("let-it-be")!;
+    const sink = async () => {};
+    const hook = createSingAlongHook(sink, song);
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    await hook.onMeasureStart(2, undefined, undefined);
+    expect(hook.directives.length).toBe(2);
+  });
+
+  it("suppresses measure number when announceMeasureNumber=false", async () => {
+    const song = getSong("let-it-be")!;
+    const directives: VoiceDirective[] = [];
+    const sink = async (d: VoiceDirective) => { directives.push(d); };
+    const hook = createSingAlongHook(sink, song, { announceMeasureNumber: false });
+
+    await hook.onMeasureStart(1, undefined, undefined);
+    expect(directives[0].text).not.toContain("Measure 1:");
+  });
+
+  it("composes with voice hook via composeTeachingHooks", async () => {
+    const song = getSong("moonlight-sonata-mvt1")!;
+    const singDirectives: VoiceDirective[] = [];
+    const voiceDirectives: VoiceDirective[] = [];
+    const singHook = createSingAlongHook(async (d) => { singDirectives.push(d); }, song);
+    const voiceHook = createVoiceTeachingHook(async (d) => { voiceDirectives.push(d); });
+    const composed = composeTeachingHooks(singHook, voiceHook);
+
+    await composed.onMeasureStart(1, "test teaching note", "mf");
+    expect(singDirectives.length).toBe(1); // sing-along spoke
+    expect(voiceDirectives.length).toBe(1); // voice hook spoke
+  });
+});
+
+describe("Sing-Along + Session integration", () => {
+  it("sing-along hook fires during full playback", async () => {
+    const mock = createMockVmpkConnector();
+    const song = getSong("basic-12-bar-blues")!;
+    const directives: VoiceDirective[] = [];
+    const hook = createSingAlongHook(async (d) => { directives.push(d); }, song);
+    const sc = createSession(song, mock, { teachingHook: hook });
+
+    await mock.connect();
+    await sc.play();
+
+    // Should have one directive per measure + completion
+    const measureCount = song.measures.length;
+    expect(directives.length).toBe(measureCount + 1);
+    expect(directives[0].blocking).toBe(true);
+    expect(directives[directives.length - 1].blocking).toBe(false); // completion
   });
 });

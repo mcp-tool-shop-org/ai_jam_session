@@ -46,7 +46,12 @@ export {
   safeParseHandString,
   safeParseMeasure,
   midiToNoteName,
+  noteToSingable,
+  handToSingableText,
+  measureToSingableText,
 } from "./note-parser.js";
+
+export type { SingAlongMode, SingAlongTextOptions } from "./note-parser.js";
 
 // Export teaching engine
 export {
@@ -56,6 +61,7 @@ export {
   createCallbackTeachingHook,
   createVoiceTeachingHook,
   createAsideTeachingHook,
+  createSingAlongHook,
   composeTeachingHooks,
   detectKeyMoments,
 } from "./teaching.js";
@@ -65,6 +71,7 @@ export type {
   TeachingCallbacks,
   VoiceHookOptions,
   AsideHookOptions,
+  SingAlongHookOptions,
 } from "./teaching.js";
 
 // Export types
