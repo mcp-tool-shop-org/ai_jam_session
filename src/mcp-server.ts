@@ -16,6 +16,7 @@
 //   suggest_song    — get a song recommendation based on criteria
 //   list_measures   — overview of measures with teaching notes
 //   practice_setup  — suggest speed, mode, and voice settings for a song
+//   sing_along      — get singable text (note names/solfege/contour/syllables) for measures
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -32,7 +33,7 @@ import {
   DIFFICULTIES,
 } from "@mcptoolshop/ai-music-sheets";
 import type { SongEntry, Difficulty } from "@mcptoolshop/ai-music-sheets";
-import { safeParseMeasure } from "./note-parser.js";
+import { safeParseMeasure, measureToSingableText, type SingAlongMode } from "./note-parser.js";
 import type { ParseWarning } from "./types.js";
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
@@ -401,6 +402,60 @@ server.tool(
         `Use \`list_measures "${song.id}"\` to see details.`
       );
     }
+
+    return { content: [{ type: "text", text: lines.join("\n") }] };
+  }
+);
+
+// ─── Tool: sing_along ─────────────────────────────────────────────────────
+
+server.tool(
+  "sing_along",
+  "Get singable text (note names, solfege, contour, or syllables) for a range of measures. Use to narrate or 'sing along' with piano playback.",
+  {
+    id: z.string().describe("Song ID"),
+    startMeasure: z.number().int().min(1).optional().describe("Start measure (1-based, default: 1)"),
+    endMeasure: z.number().int().min(1).optional().describe("End measure (1-based, default: last)"),
+    mode: z.enum(["note-names", "solfege", "contour", "syllables"]).optional()
+      .describe("Sing-along mode (default: 'note-names')"),
+    hand: z.enum(["right", "left", "both"]).optional()
+      .describe("Which hand to narrate (default: 'right')"),
+  },
+  async ({ id, startMeasure, endMeasure, mode, hand }) => {
+    const song = getSong(id);
+    if (!song) {
+      return {
+        content: [{ type: "text", text: `Song not found: "${id}". Use list_songs to see available songs.` }],
+        isError: true,
+      };
+    }
+
+    const effectiveMode: SingAlongMode = (mode as SingAlongMode) ?? "note-names";
+    const effectiveHand = hand ?? "right";
+    const start = (startMeasure ?? 1) - 1;
+    const end = Math.min((endMeasure ?? song.measures.length) - 1, song.measures.length - 1);
+    const measures = song.measures.slice(start, end + 1);
+
+    const lines = [
+      `# Sing Along: ${song.title}`,
+      `**Mode:** ${effectiveMode} | **Hand:** ${effectiveHand}`,
+      `**Measures:** ${start + 1} to ${end + 1}`,
+      ``,
+    ];
+
+    for (const m of measures) {
+      const singable = measureToSingableText(
+        { rightHand: m.rightHand, leftHand: m.leftHand },
+        { mode: effectiveMode, hand: effectiveHand }
+      );
+      lines.push(`**Measure ${m.number}:** ${singable}`);
+    }
+
+    lines.push(
+      ``,
+      `---`,
+      `*Tip: Use \`practice_setup "${song.id}"\` for a full practice configuration, then compose a sing-along hook with a voice hook for live narration during playback.*`
+    );
 
     return { content: [{ type: "text", text: lines.join("\n") }] };
   }
