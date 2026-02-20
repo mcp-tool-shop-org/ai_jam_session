@@ -42,6 +42,9 @@ export {
   parseNoteToken,
   parseHandString,
   parseMeasure,
+  safeParseNoteToken,
+  safeParseHandString,
+  safeParseMeasure,
   midiToNoteName,
 } from "./note-parser.js";
 
@@ -65,6 +68,7 @@ export type {
   PlaybackMode,
   PlaybackProgress,
   ProgressCallback,
+  ParseWarning,
   MidiNote,
   Beat,
   PlayableMeasure,

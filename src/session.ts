@@ -15,11 +15,12 @@ import type {
   PlayableMeasure,
   PlaybackProgress,
   ProgressCallback,
+  ParseWarning,
   Beat,
   VmpkConnector,
   TeachingHook,
 } from "./types.js";
-import { parseMeasure } from "./note-parser.js";
+import { parseMeasure, safeParseMeasure } from "./note-parser.js";
 import { createSilentTeachingHook, detectKeyMoments } from "./teaching.js";
 
 let sessionCounter = 0;
@@ -74,6 +75,9 @@ export class SessionController {
   private readonly onProgress?: ProgressCallback;
   private readonly progressInterval: number;
 
+  /** Parse warnings collected during measure parsing (bad notes skipped). */
+  readonly parseWarnings: ParseWarning[] = [];
+
   constructor(
     public readonly session: Session,
     private readonly connector: VmpkConnector,
@@ -84,10 +88,19 @@ export class SessionController {
     this.onProgress = onProgress;
     this.progressInterval = progressInterval ?? 0.1; // default: every 10%
 
-    // Pre-parse all measures at session creation
+    // Pre-parse all measures — gracefully skip bad notes
+    this.reParseMeasures();
+  }
+
+  /**
+   * Re-parse all measures with current effective tempo.
+   * Uses safe parser — collects warnings instead of throwing.
+   */
+  private reParseMeasures(): void {
+    this.parseWarnings.length = 0; // clear previous warnings
     const bpm = this.effectiveTempo();
-    this.playableMeasures = session.song.measures.map((m) =>
-      parseMeasure(m, bpm)
+    this.playableMeasures = this.session.song.measures.map((m) =>
+      safeParseMeasure(m, bpm, this.parseWarnings)
     );
   }
 
@@ -242,10 +255,7 @@ export class SessionController {
   /** Set tempo override. */
   setTempo(bpm: number): void {
     this.session.tempoOverride = bpm;
-    // Re-parse measures with new effective tempo
-    this.playableMeasures = this.session.song.measures.map((m) =>
-      parseMeasure(m, this.effectiveTempo())
-    );
+    this.reParseMeasures();
   }
 
   /**
@@ -257,10 +267,7 @@ export class SessionController {
       throw new Error(`Speed must be between 0 (exclusive) and 4: got ${speed}`);
     }
     this.session.speed = speed;
-    // Re-parse measures with new effective tempo
-    this.playableMeasures = this.session.song.measures.map((m) =>
-      parseMeasure(m, this.effectiveTempo())
-    );
+    this.reParseMeasures();
   }
 
   /** Get a summary of the current session state. */

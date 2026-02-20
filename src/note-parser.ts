@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { NOTE_OFFSETS, DURATION_MAP } from "./types.js";
-import type { MidiNote, Beat, PlayableMeasure } from "./types.js";
+import type { MidiNote, Beat, PlayableMeasure, ParseWarning } from "./types.js";
 import type { Measure } from "ai-music-sheets";
 
 /**
@@ -142,6 +142,80 @@ export function parseMeasure(
     source: measure,
     rightBeats: parseHandString(measure.rightHand, "right", bpm, 0, velocity),
     leftBeats: parseHandString(measure.leftHand, "left", bpm, 0, velocity),
+  };
+}
+
+/**
+ * Safely parse a note token — returns null on error instead of throwing.
+ * Collects a warning in the provided array when parsing fails.
+ */
+export function safeParseNoteToken(
+  token: string,
+  bpm: number,
+  location: string,
+  warnings: ParseWarning[],
+  channel = 0,
+  velocity = 80
+): MidiNote | null {
+  try {
+    return parseNoteToken(token, bpm, channel, velocity);
+  } catch (err) {
+    warnings.push({
+      location,
+      token,
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return null;
+  }
+}
+
+/**
+ * Safe version of parseHandString — skips bad tokens, collects warnings.
+ */
+export function safeParseHandString(
+  handStr: string,
+  hand: "right" | "left",
+  bpm: number,
+  measureNumber: number,
+  warnings: ParseWarning[],
+  channel = 0,
+  velocity = 80
+): Beat[] {
+  if (!handStr || handStr.trim() === "") return [];
+
+  const tokens = handStr.trim().split(/\s+/);
+  const beats: Beat[] = [];
+
+  for (const token of tokens) {
+    const note = safeParseNoteToken(
+      token,
+      bpm,
+      `measure ${measureNumber} ${hand} hand`,
+      warnings,
+      channel,
+      velocity
+    );
+    if (note) {
+      beats.push({ notes: [note], hand });
+    }
+  }
+
+  return beats;
+}
+
+/**
+ * Safe version of parseMeasure — skips bad notes, collects warnings.
+ */
+export function safeParseMeasure(
+  measure: Measure,
+  bpm: number,
+  warnings: ParseWarning[],
+  velocity = 80
+): PlayableMeasure {
+  return {
+    source: measure,
+    rightBeats: safeParseHandString(measure.rightHand, "right", bpm, measure.number, warnings, 0, velocity),
+    leftBeats: safeParseHandString(measure.leftHand, "left", bpm, measure.number, warnings, 0, velocity),
   };
 }
 

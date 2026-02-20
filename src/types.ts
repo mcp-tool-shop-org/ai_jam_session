@@ -196,6 +196,20 @@ export interface VmpkConnector {
   playNote(note: MidiNote): Promise<void>;
 }
 
+// ─── Parse Warning ──────────────────────────────────────────────────────────
+
+/** Warning emitted when a note/measure can't be parsed. */
+export interface ParseWarning {
+  /** Where the error occurred. */
+  location: string;
+
+  /** The offending token or string. */
+  token: string;
+
+  /** The error message. */
+  message: string;
+}
+
 // ─── Note Parsing Types ─────────────────────────────────────────────────────
 
 /** Duration suffix → multiplier (relative to quarter note). */
