@@ -45,6 +45,15 @@ export {
   midiToNoteName,
 } from "./note-parser.js";
 
+// Export teaching engine
+export {
+  createConsoleTeachingHook,
+  createSilentTeachingHook,
+  createRecordingTeachingHook,
+  createCallbackTeachingHook,
+  detectKeyMoments,
+} from "./teaching.js";
+
 // Export types
 export type {
   Session,
@@ -57,6 +66,9 @@ export type {
   MidiStatus,
   VmpkConfig,
   VmpkConnector,
+  TeachingHook,
+  TeachingInterjection,
+  TeachingPriority,
 } from "./types.js";
 
 export { DURATION_MAP, NOTE_OFFSETS } from "./types.js";
