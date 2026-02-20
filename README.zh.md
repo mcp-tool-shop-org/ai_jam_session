@@ -2,9 +2,15 @@
   <a href="README.md">English</a> | <a href="README.ja.md">日本語</a> | <strong>中文</strong> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português</a>
 </p>
 
-# pianai
+<p align="center">
+  <img src="logo.svg" alt="PianoAI 标志" width="180" />
+</p>
 
-AI 驱动的钢琴教学 MCP 服务器 + CLI —— 通过 MIDI 在 VMPK 上演奏，并提供语音反馈。
+<h1 align="center">PianoAI</h1>
+
+<p align="center">
+  AI 驱动的钢琴教学 MCP 服务器 + CLI —— 通过 MIDI 在 VMPK 上演奏，并提供语音反馈。
+</p>
 
 [![Tests](https://img.shields.io/badge/tests-121_passing-brightgreen)](https://github.com/mcp-tool-shop-org/pianoai)
 [![Smoke](https://img.shields.io/badge/smoke-20_passing-brightgreen)](https://github.com/mcp-tool-shop-org/pianoai)

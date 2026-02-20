@@ -2,9 +2,15 @@
   <a href="README.md">English</a> | <strong>日本語</strong> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português</a>
 </p>
 
-# pianai
+<p align="center">
+  <img src="logo.svg" alt="PianoAI ロゴ" width="180" />
+</p>
 
-AI搭載ピアノ教習用MCPサーバー＋CLI — MIDIを介してVMPKで演奏し、音声フィードバックを提供します。
+<h1 align="center">PianoAI</h1>
+
+<p align="center">
+  AI搭載ピアノ教習用MCPサーバー＋CLI — MIDIを介してVMPKで演奏し、音声フィードバックを提供します。
+</p>
 
 [![Tests](https://img.shields.io/badge/tests-121_passing-brightgreen)](https://github.com/mcp-tool-shop-org/pianoai)
 [![Smoke](https://img.shields.io/badge/smoke-20_passing-brightgreen)](https://github.com/mcp-tool-shop-org/pianoai)

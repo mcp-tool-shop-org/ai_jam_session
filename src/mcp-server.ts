@@ -65,7 +65,7 @@ function suggestMode(difficulty: Difficulty): { mode: string; reason: string } {
 
 const server = new McpServer({
   name: "pianai",
-  version: "0.2.0",
+  version: "1.0.0",
 });
 
 // ─── Tool: list_songs ───────────────────────────────────────────────────────
