@@ -1,0 +1,184 @@
+import { describe, it, expect } from "vitest";
+import {
+  parseNoteToMidi,
+  parseDuration,
+  durationToMs,
+  parseNoteToken,
+  parseHandString,
+  parseMeasure,
+  midiToNoteName,
+} from "./note-parser.js";
+
+describe("parseNoteToMidi", () => {
+  it("converts C4 to 60 (middle C)", () => {
+    expect(parseNoteToMidi("C4")).toBe(60);
+  });
+
+  it("converts A4 to 69 (concert A)", () => {
+    expect(parseNoteToMidi("A4")).toBe(69);
+  });
+
+  it("handles sharps: F#5 = 78", () => {
+    expect(parseNoteToMidi("F#5")).toBe(78);
+  });
+
+  it("handles flats: Bb3 = 58", () => {
+    expect(parseNoteToMidi("Bb3")).toBe(58);
+  });
+
+  it("converts C#4 to 61", () => {
+    expect(parseNoteToMidi("C#4")).toBe(61);
+  });
+
+  it("converts Eb4 to 63", () => {
+    expect(parseNoteToMidi("Eb4")).toBe(63);
+  });
+
+  it("handles low notes: C2 = 36", () => {
+    expect(parseNoteToMidi("C2")).toBe(36);
+  });
+
+  it("handles high notes: C7 = 96", () => {
+    expect(parseNoteToMidi("C7")).toBe(96);
+  });
+
+  it("returns -1 for rest (R)", () => {
+    expect(parseNoteToMidi("R")).toBe(-1);
+  });
+
+  it("throws on invalid note", () => {
+    expect(() => parseNoteToMidi("X4")).toThrow("Invalid note");
+  });
+
+  it("throws on note without octave", () => {
+    expect(() => parseNoteToMidi("C")).toThrow("Invalid note");
+  });
+});
+
+describe("parseDuration", () => {
+  it("whole note = 4.0", () => {
+    expect(parseDuration("w")).toBe(4.0);
+  });
+
+  it("half note = 2.0", () => {
+    expect(parseDuration("h")).toBe(2.0);
+  });
+
+  it("quarter note = 1.0", () => {
+    expect(parseDuration("q")).toBe(1.0);
+  });
+
+  it("eighth note = 0.5", () => {
+    expect(parseDuration("e")).toBe(0.5);
+  });
+
+  it("sixteenth note = 0.25", () => {
+    expect(parseDuration("s")).toBe(0.25);
+  });
+
+  it("throws on unknown suffix", () => {
+    expect(() => parseDuration("x")).toThrow("Unknown duration");
+  });
+});
+
+describe("durationToMs", () => {
+  it("quarter note at 120 BPM = 500ms", () => {
+    expect(durationToMs(1.0, 120)).toBe(500);
+  });
+
+  it("half note at 120 BPM = 1000ms", () => {
+    expect(durationToMs(2.0, 120)).toBe(1000);
+  });
+
+  it("eighth note at 60 BPM = 500ms", () => {
+    expect(durationToMs(0.5, 60)).toBe(500);
+  });
+
+  it("whole note at 60 BPM = 4000ms", () => {
+    expect(durationToMs(4.0, 60)).toBe(4000);
+  });
+});
+
+describe("parseNoteToken", () => {
+  it("parses C4:q at 120 BPM", () => {
+    const note = parseNoteToken("C4:q", 120);
+    expect(note.note).toBe(60);
+    expect(note.durationMs).toBe(500);
+    expect(note.velocity).toBe(80);
+    expect(note.channel).toBe(0);
+  });
+
+  it("parses F#5:e at 100 BPM", () => {
+    const note = parseNoteToken("F#5:e", 100);
+    expect(note.note).toBe(78);
+    expect(note.durationMs).toBe(300); // 600ms per quarter * 0.5
+  });
+
+  it("rest has velocity 0", () => {
+    const note = parseNoteToken("R:q", 120);
+    expect(note.note).toBe(-1);
+    expect(note.velocity).toBe(0);
+  });
+
+  it("respects custom velocity and channel", () => {
+    const note = parseNoteToken("A4:h", 120, 5, 100);
+    expect(note.channel).toBe(5);
+    expect(note.velocity).toBe(100);
+  });
+});
+
+describe("parseHandString", () => {
+  it("parses a sequence of notes", () => {
+    const beats = parseHandString("C4:q E4:q G4:q", "right", 120);
+    expect(beats.length).toBe(3);
+    expect(beats[0].hand).toBe("right");
+    expect(beats[0].notes[0].note).toBe(60); // C4
+    expect(beats[1].notes[0].note).toBe(64); // E4
+    expect(beats[2].notes[0].note).toBe(67); // G4
+  });
+
+  it("returns empty for empty string", () => {
+    expect(parseHandString("", "left", 120)).toEqual([]);
+  });
+
+  it("handles single note", () => {
+    const beats = parseHandString("C3:w", "left", 60);
+    expect(beats.length).toBe(1);
+    expect(beats[0].notes[0].note).toBe(48);
+    expect(beats[0].notes[0].durationMs).toBe(4000); // whole note at 60 BPM
+  });
+});
+
+describe("parseMeasure", () => {
+  it("parses a full measure", () => {
+    const pm = parseMeasure(
+      {
+        number: 1,
+        rightHand: "C4:q E4:q G4:q",
+        leftHand: "C3:h",
+      },
+      120
+    );
+    expect(pm.rightBeats.length).toBe(3);
+    expect(pm.leftBeats.length).toBe(1);
+    expect(pm.source.number).toBe(1);
+  });
+});
+
+describe("midiToNoteName", () => {
+  it("60 → C4", () => {
+    expect(midiToNoteName(60)).toBe("C4");
+  });
+
+  it("69 → A4", () => {
+    expect(midiToNoteName(69)).toBe("A4");
+  });
+
+  it("78 → F#5", () => {
+    expect(midiToNoteName(78)).toBe("F#5");
+  });
+
+  it("-1 → R (rest)", () => {
+    expect(midiToNoteName(-1)).toBe("R");
+  });
+});

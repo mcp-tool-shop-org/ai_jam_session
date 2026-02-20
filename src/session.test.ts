@@ -1,0 +1,172 @@
+import { describe, it, expect, beforeEach } from "vitest";
+import { getSong } from "ai-music-sheets";
+import { createSession } from "./session.js";
+import { createMockVmpkConnector } from "./vmpk.js";
+
+describe("SessionController", () => {
+  const moonlight = getSong("moonlight-sonata-mvt1")!;
+  const blues = getSong("basic-12-bar-blues")!;
+
+  it("creates a session in 'loaded' state", () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock);
+    expect(sc.state).toBe("loaded");
+    expect(sc.session.song.id).toBe("moonlight-sonata-mvt1");
+    expect(sc.totalMeasures).toBe(8);
+  });
+
+  it("reports correct tempo", () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock);
+    expect(sc.effectiveTempo()).toBe(56); // song default
+  });
+
+  it("respects tempo override", () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock, { tempo: 100 });
+    expect(sc.effectiveTempo()).toBe(100);
+  });
+
+  it("plays through all measures in full mode", async () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(blues, mock);
+    await mock.connect();
+
+    await sc.play();
+
+    expect(sc.state).toBe("finished");
+    expect(sc.session.measuresPlayed).toBe(12); // 12-bar blues
+  });
+
+  it("plays one measure in measure mode then pauses", async () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock, { mode: "measure" });
+    await mock.connect();
+
+    await sc.play();
+
+    expect(sc.state).toBe("paused");
+    expect(sc.session.currentMeasure).toBe(0); // still on first measure
+    expect(sc.session.measuresPlayed).toBe(1);
+  });
+
+  it("advances with next() in measure mode", async () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock, { mode: "measure" });
+
+    sc.next();
+    expect(sc.currentMeasureDisplay).toBe(2);
+
+    sc.next();
+    expect(sc.currentMeasureDisplay).toBe(3);
+
+    sc.prev();
+    expect(sc.currentMeasureDisplay).toBe(2);
+  });
+
+  it("goTo jumps to specific measure", () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock);
+
+    sc.goTo(5); // 1-based
+    expect(sc.currentMeasureDisplay).toBe(5);
+    expect(sc.session.currentMeasure).toBe(4); // 0-based internal
+  });
+
+  it("stop resets to beginning", async () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock, { mode: "measure" });
+    await mock.connect();
+
+    await sc.play(); // plays measure 1
+    sc.next();
+    sc.stop();
+
+    expect(sc.state).toBe("idle");
+    expect(sc.session.currentMeasure).toBe(0);
+  });
+
+  it("setTempo re-parses measures", () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock);
+
+    sc.setTempo(200);
+    expect(sc.effectiveTempo()).toBe(200);
+    expect(sc.session.tempoOverride).toBe(200);
+  });
+
+  it("summary includes song info", () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock);
+    const summary = sc.summary();
+
+    expect(summary).toContain("Moonlight Sonata");
+    expect(summary).toContain("Beethoven");
+    expect(summary).toContain("classical");
+    expect(summary).toContain("56 BPM");
+  });
+
+  it("records MIDI events through mock connector", async () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock, { mode: "measure" });
+    await mock.connect();
+
+    await sc.play(); // plays one measure
+
+    // Should have playNote events
+    const playNotes = mock.events.filter((e) => e.type === "playNote");
+    expect(playNotes.length).toBeGreaterThan(0);
+
+    // First note should be a valid MIDI number
+    expect(playNotes[0].note).toBeGreaterThanOrEqual(0);
+    expect(playNotes[0].note).toBeLessThanOrEqual(127);
+  });
+
+  it("hands mode plays RH, LH, then both", async () => {
+    const mock = createMockVmpkConnector();
+    const sc = createSession(moonlight, mock, { mode: "hands" });
+    await mock.connect();
+
+    await sc.play();
+
+    expect(sc.state).toBe("paused");
+    // In hands mode, we play 3x the notes for one measure (RH, LH, both)
+    const playNotes = mock.events.filter((e) => e.type === "playNote");
+    expect(playNotes.length).toBeGreaterThan(0);
+  });
+});
+
+describe("MockVmpkConnector", () => {
+  it("tracks connect/disconnect", async () => {
+    const mock = createMockVmpkConnector();
+    expect(mock.status()).toBe("disconnected");
+
+    await mock.connect();
+    expect(mock.status()).toBe("connected");
+
+    await mock.disconnect();
+    expect(mock.status()).toBe("disconnected");
+  });
+
+  it("records noteOn/noteOff events", () => {
+    const mock = createMockVmpkConnector();
+    mock.noteOn(60, 100, 0);
+    mock.noteOff(60, 0);
+
+    expect(mock.events).toEqual([
+      { type: "noteOn", note: 60, velocity: 100, channel: 0 },
+      { type: "noteOff", note: 60, channel: 0 },
+    ]);
+  });
+
+  it("records allNotesOff", () => {
+    const mock = createMockVmpkConnector();
+    mock.allNotesOff(0);
+    expect(mock.events[0].type).toBe("allNotesOff");
+  });
+
+  it("listPorts returns mock port", () => {
+    const mock = createMockVmpkConnector();
+    expect(mock.listPorts()).toEqual(["Mock Port 1"]);
+  });
+});
