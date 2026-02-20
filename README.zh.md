@@ -43,7 +43,7 @@
 ## 安装
 
 ```bash
-npm install -g pianai
+npm install -g @mcptoolshop/pianai
 ```
 
 ## 快速开始
@@ -139,7 +139,7 @@ pnpm mcp
 ### 语音反馈
 
 ```typescript
-import { createSession, createVoiceTeachingHook } from "pianai";
+import { createSession, createVoiceTeachingHook } from "@mcptoolshop/pianai";
 import { getSong } from "ai-music-sheets";
 
 const voiceHook = createVoiceTeachingHook(
@@ -167,7 +167,7 @@ import {
   createAsideTeachingHook,
   createRecordingTeachingHook,
   composeTeachingHooks,
-} from "pianai";
+} from "@mcptoolshop/pianai";
 
 // 三个钩子在每个事件上都会触发
 const composed = composeTeachingHooks(
@@ -181,7 +181,7 @@ const composed = composeTeachingHooks(
 
 ```typescript
 import { getSong } from "ai-music-sheets";
-import { createSession, createVmpkConnector } from "pianai";
+import { createSession, createVmpkConnector } from "@mcptoolshop/pianai";
 
 const connector = createVmpkConnector({ portName: /loop/i });
 await connector.connect();

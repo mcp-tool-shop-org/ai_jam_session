@@ -43,7 +43,7 @@ Un CLI TypeScript e server MCP che carica brani per pianoforte da [ai-music-shee
 ## Installazione
 
 ```bash
-npm install -g pianai
+npm install -g @mcptoolshop/pianai
 ```
 
 ## Avvio Rapido
@@ -139,7 +139,7 @@ Il motore didattico attiva hook durante la riproduzione. 7 implementazioni di ho
 ### Feedback vocale
 
 ```typescript
-import { createSession, createVoiceTeachingHook } from "pianai";
+import { createSession, createVoiceTeachingHook } from "@mcptoolshop/pianai";
 import { getSong } from "ai-music-sheets";
 
 const voiceHook = createVoiceTeachingHook(
@@ -167,7 +167,7 @@ import {
   createAsideTeachingHook,
   createRecordingTeachingHook,
   composeTeachingHooks,
-} from "pianai";
+} from "@mcptoolshop/pianai";
 
 // Tutti e tre si attivano ad ogni evento
 const composed = composeTeachingHooks(
@@ -181,7 +181,7 @@ const composed = composeTeachingHooks(
 
 ```typescript
 import { getSong } from "ai-music-sheets";
-import { createSession, createVmpkConnector } from "pianai";
+import { createSession, createVmpkConnector } from "@mcptoolshop/pianai";
 
 const connector = createVmpkConnector({ portName: /loop/i });
 await connector.connect();
