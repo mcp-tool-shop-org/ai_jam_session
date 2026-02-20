@@ -43,7 +43,7 @@ Un CLI TypeScript et un serveur MCP qui charge des morceaux de piano depuis [ai-
 ## Installation
 
 ```bash
-npm install -g @mcptoolshop/pianai
+npm install -g @mcptoolshop/pianoai
 ```
 
 ## Démarrage rapide
@@ -139,7 +139,7 @@ Le moteur pédagogique déclenche des hooks pendant la lecture. 7 implémentatio
 ### Retour vocal
 
 ```typescript
-import { createSession, createVoiceTeachingHook } from "@mcptoolshop/pianai";
+import { createSession, createVoiceTeachingHook } from "@mcptoolshop/pianoai";
 import { getSong } from "ai-music-sheets";
 
 const voiceHook = createVoiceTeachingHook(
@@ -167,7 +167,7 @@ import {
   createAsideTeachingHook,
   createRecordingTeachingHook,
   composeTeachingHooks,
-} from "@mcptoolshop/pianai";
+} from "@mcptoolshop/pianoai";
 
 // Les trois se déclenchent à chaque événement
 const composed = composeTeachingHooks(
@@ -181,7 +181,7 @@ const composed = composeTeachingHooks(
 
 ```typescript
 import { getSong } from "ai-music-sheets";
-import { createSession, createVmpkConnector } from "@mcptoolshop/pianai";
+import { createSession, createVmpkConnector } from "@mcptoolshop/pianoai";
 
 const connector = createVmpkConnector({ portName: /loop/i });
 await connector.connect();

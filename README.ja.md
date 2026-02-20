@@ -43,7 +43,7 @@ TypeScript製のCLIおよびMCPサーバーで、[ai-music-sheets](https://githu
 ## インストール
 
 ```bash
-npm install -g @mcptoolshop/pianai
+npm install -g @mcptoolshop/pianoai
 ```
 
 ## クイックスタート
@@ -139,7 +139,7 @@ pnpm mcp
 ### 音声フィードバック
 
 ```typescript
-import { createSession, createVoiceTeachingHook } from "@mcptoolshop/pianai";
+import { createSession, createVoiceTeachingHook } from "@mcptoolshop/pianoai";
 import { getSong } from "ai-music-sheets";
 
 const voiceHook = createVoiceTeachingHook(
@@ -167,7 +167,7 @@ import {
   createAsideTeachingHook,
   createRecordingTeachingHook,
   composeTeachingHooks,
-} from "@mcptoolshop/pianai";
+} from "@mcptoolshop/pianoai";
 
 // 3つすべてが各イベントで発火
 const composed = composeTeachingHooks(
@@ -181,7 +181,7 @@ const composed = composeTeachingHooks(
 
 ```typescript
 import { getSong } from "ai-music-sheets";
-import { createSession, createVmpkConnector } from "@mcptoolshop/pianai";
+import { createSession, createVmpkConnector } from "@mcptoolshop/pianoai";
 
 const connector = createVmpkConnector({ portName: /loop/i });
 await connector.connect();
