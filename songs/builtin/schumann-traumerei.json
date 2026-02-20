@@ -1,0 +1,70 @@
+{
+  "id": "schumann-traumerei",
+  "title": "Traumerei (Dreaming)",
+  "genre": "classical",
+  "composer": "Robert Schumann",
+  "difficulty": "intermediate",
+  "key": "F major",
+  "tempo": 56,
+  "timeSignature": "4/4",
+  "durationSeconds": 34,
+  "tags": ["classical", "schumann", "romantic", "lyrical", "dreaming"],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "From Kinderszenen (Scenes from Childhood), Traumerei is perhaps the most famous piano miniature ever written. Its gently rising melody evokes the act of dreaming itself — each phrase reaching upward before settling back, like a sigh of contentment.",
+    "structure": "Main theme excerpt (8 bars)",
+    "keyMoments": ["Rising melody arc in measure 1-2", "Tender melodic peak in measure 5"],
+    "teachingGoals": ["Shape a long singing phrase across multiple measures", "Learn gentle, expressive rubato"],
+    "styleTips": ["Each phrase should rise and fall like a slow breath", "Take the tiniest pause at the peak of each phrase"]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "F4:q A4:q C5:q F5:q",
+      "leftHand": "F3:q C4 A3:q F3:q C4 A3:q",
+      "dynamics": "p"
+    },
+    {
+      "number": 2,
+      "rightHand": "E5:q D5:q C5:h",
+      "leftHand": "Bb3:q D4 F4:q F3:q A3 C4:q",
+      "dynamics": "p"
+    },
+    {
+      "number": 3,
+      "rightHand": "A4:q C5:q E5:q A5:q",
+      "leftHand": "F3:q C4 A3:q F3:q C4 A3:q",
+      "dynamics": "mp"
+    },
+    {
+      "number": 4,
+      "rightHand": "G5:q F5:q E5:h",
+      "leftHand": "C3:q E4 Bb3:q C3:q E4 G3:q",
+      "dynamics": "mp"
+    },
+    {
+      "number": 5,
+      "rightHand": "F5:q A5:q C6:q A5:q",
+      "leftHand": "F3:q C4 A3:q F3:q C4 A3:q",
+      "dynamics": "mf"
+    },
+    {
+      "number": 6,
+      "rightHand": "G5:q E5:q D5:q C5:q",
+      "leftHand": "Bb3:q D4 F4:q Bb3:q D4 G4:q",
+      "dynamics": "mp"
+    },
+    {
+      "number": 7,
+      "rightHand": "A4:q Bb4:q A4:q G4:q",
+      "leftHand": "F3:q C4 A3:q C3:q E4 Bb3:q",
+      "dynamics": "p"
+    },
+    {
+      "number": 8,
+      "rightHand": "F4:w",
+      "leftHand": "F3:q C4 A3:q F2:h",
+      "dynamics": "pp"
+    }
+  ]
+}

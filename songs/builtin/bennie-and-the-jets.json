@@ -1,0 +1,92 @@
+{
+  "id": "bennie-and-the-jets",
+  "title": "Bennie and the Jets",
+  "genre": "rock",
+  "composer": "Elton John & Bernie Taupin",
+  "difficulty": "intermediate",
+  "key": "G major",
+  "tempo": 112,
+  "timeSignature": "4/4",
+  "durationSeconds": 17,
+  "tags": [
+    "elton-john",
+    "glam-rock",
+    "staccato",
+    "syncopated",
+    "funky"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Elton John's glam-rock masterpiece features a punchy, syncopated piano style with staccato chords and rhythmic accents. The song's piano part is percussive and funky, quite different from his ballad style. This arrangement captures the signature choppy chord hits and the driving energy.",
+    "structure": "Verse-Chorus riff (8 bars) — G-Am-C-G with syncopated staccato chords",
+    "keyMoments": [
+      "Bars 1-2: The punchy G major opening — staccato chords define the glam-rock texture",
+      "Bars 3-4: Am to C — the chord changes create rhythmic interest through anticipation",
+      "Bars 7-8: The signature descending bass line into the cadence"
+    ],
+    "teachingGoals": [
+      "Staccato chord technique — short, punchy attacks",
+      "Syncopated rhythms — accenting off-beats",
+      "Percussive piano playing style"
+    ],
+    "styleTips": [
+      "Play chords short and punchy — staccato is essential to the glam-rock feel",
+      "Accent the off-beats — the groove comes from syncopation",
+      "Think of the piano as a rhythm instrument here, not a melodic one"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "G4 B4 D5:q R:e G4 B4 D5:e R:q G4 B4 D5:q",
+      "leftHand": "G2:q R:e G2:e R:q G2:q",
+      "teachingNote": "G major staccato chords — the iconic punchy feel. Play them short and snappy.",
+      "dynamics": "f"
+    },
+    {
+      "number": 2,
+      "rightHand": "G4 B4 D5:e R:e G4 B4 D5:q R:q G4 B4 D5:q",
+      "leftHand": "G2:e R:e G2:q R:q G3:q",
+      "teachingNote": "Same chord, different rhythm — the syncopation shifts. Feel the groove, do not just read it."
+    },
+    {
+      "number": 3,
+      "rightHand": "A4 C5 E5:q R:e A4 C5 E5:e R:q A4 C5 E5:q",
+      "leftHand": "A2:q R:e A2:e R:q A2:q",
+      "teachingNote": "A minor — same rhythmic pattern transposed. The chord change adds harmonic interest."
+    },
+    {
+      "number": 4,
+      "rightHand": "C5 E5 G5:q R:e C5 E5 G5:e R:q C5 E5 G5:q",
+      "leftHand": "C3:q R:e C3:e R:q C3:q",
+      "teachingNote": "C major — the biggest, brightest chord. Play it with authority."
+    },
+    {
+      "number": 5,
+      "rightHand": "G4 B4 D5:q R:e G4 B4 D5:e G4 B4 D5:q R:q",
+      "leftHand": "G2:q R:e G2:e G2:q R:q",
+      "teachingNote": "G major returns — you know this shape. Lean into the syncopation.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 6,
+      "rightHand": "F#4 A4 D5:q R:e F#4 A4 D5:e R:q F#4 A4 D5:q",
+      "leftHand": "D2:q R:e D2:e R:q D2:q",
+      "teachingNote": "D major — the V chord. F# gives it the bright major quality."
+    },
+    {
+      "number": 7,
+      "rightHand": "E4 G4 C5:q R:e E4 G4 C5:e R:q E4 G4 C5:q",
+      "leftHand": "C3:q B2:q A2:q G2:q",
+      "teachingNote": "C major with descending bass — the signature bass line walks down chromatically.",
+      "dynamics": "f"
+    },
+    {
+      "number": 8,
+      "rightHand": "G4 B4 D5:h R:h",
+      "leftHand": "D2:q G2:q G2:h",
+      "teachingNote": "G major — one final stab and silence. The rest is as important as the notes.",
+      "dynamics": "ff"
+    }
+  ]
+}

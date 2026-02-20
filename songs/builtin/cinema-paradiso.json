@@ -1,0 +1,94 @@
+{
+  "id": "cinema-paradiso",
+  "title": "Cinema Paradiso (Love Theme)",
+  "genre": "film",
+  "composer": "Ennio Morricone",
+  "difficulty": "intermediate",
+  "key": "F major",
+  "tempo": 66,
+  "timeSignature": "4/4",
+  "durationSeconds": 29,
+  "tags": [
+    "morricone",
+    "nostalgic",
+    "italian",
+    "ballad",
+    "lyrical"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Morricone's nostalgic love theme from Cinema Paradiso is one of the most emotionally affecting film melodies ever written. The piece unfolds in F major with a gentle, singing melody that captures the bittersweet longing for lost innocence. The left hand provides warm, arpeggiated accompaniment while the right hand melody rises and falls with exquisite tenderness.",
+    "structure": "A section: ascending melody over F-Bb-C (4 bars), B section: emotional climax and resolution (4 bars)",
+    "keyMoments": [
+      "Bar 1: The opening F major melody — simple and achingly beautiful.",
+      "Bars 3-4: The melody reaches upward to Bb4 — the emotional yearning.",
+      "Bars 7-8: The gentle resolution — nostalgia accepted, not resolved."
+    ],
+    "teachingGoals": [
+      "Lyrical melodic playing — making the piano sing",
+      "Arpeggiated left hand accompaniment patterns",
+      "Rubato and expressive tempo flexibility"
+    ],
+    "styleTips": [
+      "Play as if remembering something beautiful and lost",
+      "The melody must sing above the accompaniment — balance is crucial",
+      "Allow subtle rubato — slow down at phrase peaks, move forward in transitions"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "C4:q F4:q A4:h",
+      "leftHand": "F2:e A2:e C3:e F3:e A3:e C4:e A3:e F3:e",
+      "dynamics": "p",
+      "teachingNote": "Fmaj — the opening ascent. Tender and questioning. Let it sing."
+    },
+    {
+      "number": 2,
+      "rightHand": "G4:q A4:q Bb4:h",
+      "leftHand": "Bb2:e D3:e F3:e Bb3:e D4:e Bb3:e F3:e D3:e",
+      "dynamics": "mp",
+      "teachingNote": "Bb major — melody continues climbing. The yearning intensifies."
+    },
+    {
+      "number": 3,
+      "rightHand": "A4:q G4:q F4:q E4:q",
+      "leftHand": "C2:e E2:e G2:e C3:e E3:e C3:e G2:e E2:e",
+      "teachingNote": "C7 — melody descends through the dominant. Gentle tension."
+    },
+    {
+      "number": 4,
+      "rightHand": "F4:h R:q C4:q",
+      "leftHand": "F2:e A2:e C3:e F3:e A3:e F3:e C3:e A2:e",
+      "teachingNote": "F major — resolution. The rest allows a breath before the B section."
+    },
+    {
+      "number": 5,
+      "rightHand": "D4:q F4:q A4:q C5:q",
+      "leftHand": "Dm2:e F2:e A2:e D3:e F3:e D3:e A2:e F2:e",
+      "dynamics": "mf",
+      "teachingNote": "Dm — the B section. Melody reaches higher, C5. More emotional weight."
+    },
+    {
+      "number": 6,
+      "rightHand": "Bb4:q A4:q G4:q F4:q",
+      "leftHand": "Bb2:e D3:e F3:e Bb3:e D4:e Bb3:e F3:e D3:e",
+      "dynamics": "f",
+      "teachingNote": "Bb major — the emotional peak. Full, warm tone. Don't hold back."
+    },
+    {
+      "number": 7,
+      "rightHand": "E4:q F4:q G4:q A4:q",
+      "leftHand": "C2:e E2:e G2:e Bb2:e C3:e Bb2:e G2:e E2:e",
+      "dynamics": "mf",
+      "teachingNote": "C7 — the final climb. Each note steps toward resolution."
+    },
+    {
+      "number": 8,
+      "rightHand": "F4:w",
+      "leftHand": "F2:e A2:e C3:e F3:e A3:e F3:e C3:e F2:e",
+      "dynamics": "pp",
+      "teachingNote": "F major — whole note F over gentle arpeggios. Memory fades to silence."
+    }
+  ]
+}

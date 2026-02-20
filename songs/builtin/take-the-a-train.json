@@ -1,0 +1,93 @@
+{
+  "id": "take-the-a-train",
+  "title": "Take the A Train",
+  "genre": "jazz",
+  "composer": "Billy Strayhorn",
+  "difficulty": "beginner",
+  "key": "C major",
+  "tempo": 126,
+  "timeSignature": "4/4",
+  "durationSeconds": 15,
+  "tags": [
+    "swing",
+    "duke-ellington",
+    "billy-strayhorn",
+    "big-band",
+    "jazz-standard",
+    "beginner-friendly"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Billy Strayhorn wrote this tune on the subway, and it became the theme song of the Duke Ellington Orchestra. The melody is bright and optimistic, built on a simple ascending figure over basic jazz changes. The #4 note (F#) over C major gives it that distinctive, sparkling lift.",
+    "structure": "AABA — 32 bars. This excerpt: first A section (8 bars)",
+    "keyMoments": [
+      "Bar 1-2: The ascending melody with the characteristic F#4 — the lydian sparkle",
+      "Bar 3-4: Melody continues climbing toward G5 — riding the A train uptown",
+      "Bar 7-8: Phrase resolves to C with a classic swing ending figure"
+    ],
+    "teachingGoals": [
+      "Swing feel at a comfortable medium tempo",
+      "The #4 (F#) over a major chord — lydian color in practice",
+      "Simple left-hand stride: bass note on 1-3, chord on 2-4"
+    ],
+    "styleTips": [
+      "Bright and happy — this tune smiles. Play with energy.",
+      "Swing the eighths but keep it light — medium swing, not heavy",
+      "The F# is not a mistake — lean into it, that is the sound"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "C4:q D4:q E4:q F#4:q",
+      "leftHand": "C3:h E3 G3:h",
+      "teachingNote": "CMaj7 — the melody climbs up with F# as the surprise note. This is the 'A Train' sound.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "G4:h R:h",
+      "leftHand": "C3:h E3 G3:h",
+      "teachingNote": "CMaj7 continues. G4 resolves the chromatic climb. Let it breathe."
+    },
+    {
+      "number": 3,
+      "rightHand": "C4:q D4:q E4:q F#4:q",
+      "leftHand": "D3:h F#3 A3:h",
+      "teachingNote": "D7 — same melody, but the left hand shifts to D7. The F# now fits both melody and chord!"
+    },
+    {
+      "number": 4,
+      "rightHand": "A4:h G4:h",
+      "leftHand": "D3:h F#3 A3:h",
+      "teachingNote": "D7 continues. Melody peaks at A4 and descends to G4."
+    },
+    {
+      "number": 5,
+      "rightHand": "E5:q D5:q C5:q B4:q",
+      "leftHand": "D3:h F3 A3:h",
+      "teachingNote": "Dm7 — the ii chord. Melody descends from E5. Left hand supports gently.",
+      "dynamics": "f"
+    },
+    {
+      "number": 6,
+      "rightHand": "A4:q G4:q F4:q E4:q",
+      "leftHand": "G2:h F3 B3:h",
+      "teachingNote": "G7 — the V chord. Melody continues its descent. Resolution is coming."
+    },
+    {
+      "number": 7,
+      "rightHand": "E4:q G4:q C5:h",
+      "leftHand": "C3:h E3 G3:h",
+      "teachingNote": "CMaj7 — arrival! Melody leaps up to C5 in a classic swing gesture.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 8,
+      "rightHand": "C5:h R:h",
+      "leftHand": "C3:h G3:h",
+      "teachingNote": "CMaj7 — rest on the tonic. Clean ending. Ready to loop back to bar 1.",
+      "dynamics": "mp"
+    }
+  ]
+}

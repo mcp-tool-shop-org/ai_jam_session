@@ -1,0 +1,93 @@
+{
+  "id": "lets-stay-together",
+  "title": "Let's Stay Together",
+  "genre": "rnb",
+  "composer": "Al Green / Willie Mitchell / Al Jackson Jr.",
+  "difficulty": "advanced",
+  "key": "F major",
+  "tempo": 104,
+  "timeSignature": "4/4",
+  "durationSeconds": 18,
+  "tags": [
+    "smooth-soul",
+    "al-green",
+    "memphis",
+    "advanced-harmony",
+    "groove"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Al Green's Memphis soul masterpiece features sophisticated chord movement with major and minor ninths, chromatic bass motion, and a silky smooth groove. This advanced arrangement includes extended chord voicings, inner voice movement, and a demanding left hand bass line that drives the iconic rhythm. The interplay between the lush harmony and floating melody demands refined coordination.",
+    "structure": "Verse: Fmaj9-Am7-Dm9-Bbmaj7-Am7-Gm7-C9 (4 bars), Chorus: intensified with wider voicings (4 bars)",
+    "keyMoments": [
+      "Bar 1: Fmaj9 — the opening chord sets the silk standard.",
+      "Bars 3-4: Bbmaj7 to Gm7 to C9 — the cascading descent that defines the song.",
+      "Bars 7-8: The climactic passage with full extended voicings."
+    ],
+    "teachingGoals": [
+      "Extended chord voicings — 9ths and major 7ths",
+      "Chromatic bass movement and smooth voice leading",
+      "Advanced two-hand coordination with independent rhythms"
+    ],
+    "styleTips": [
+      "The groove should feel like velvet — smooth but with subtle rhythmic push",
+      "Voice each chord carefully — every note in the voicing matters",
+      "The bass line is the backbone — make it sing, not just thump"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "A4:e G4:e F4:q E4:q G4:q",
+      "leftHand": "F2:q C3:e A2:e F2:q C3:q",
+      "dynamics": "mf",
+      "teachingNote": "Fmaj9 — lush opening. The eighth notes in both hands must align precisely."
+    },
+    {
+      "number": 2,
+      "rightHand": "A4:q G4:e F4:e E4:q D4:q",
+      "leftHand": "A2:q E3:q D3:q A2:q",
+      "teachingNote": "Am7 to Dm9 — melody weaves through the chord tones. Keep it legato."
+    },
+    {
+      "number": 3,
+      "rightHand": "D4:q F4:q A4:e Bb4:e A4:q",
+      "leftHand": "Bb2:q F3:q A2:q E3:q",
+      "dynamics": "f",
+      "teachingNote": "Bbmaj7 to Am7 — the chromatic bass descent. This is the money move."
+    },
+    {
+      "number": 4,
+      "rightHand": "G4:q Bb4:q A4:q G4:q",
+      "leftHand": "G2:q D3:q C2:q G2:e Bb2:e",
+      "teachingNote": "Gm7 to C9 — dominant turnaround. The Bb in the bass is the 7th of C."
+    },
+    {
+      "number": 5,
+      "rightHand": "F4:e A4:e C5:q Bb4:q A4:q",
+      "leftHand": "F2:q C3:q F3:q C3:q",
+      "dynamics": "f",
+      "teachingNote": "Chorus — Fmaj9. Melody leaps to C5. Open up the sound."
+    },
+    {
+      "number": 6,
+      "rightHand": "Bb4:q A4:e G4:e F4:q E4:q",
+      "leftHand": "Bb2:q F3:q A2:q E3:q",
+      "teachingNote": "Bbmaj7 to Am7 — same chromatic bass as before but melody is more active."
+    },
+    {
+      "number": 7,
+      "rightHand": "D4:e F4:e A4:q C5:e Bb4:e A4:q",
+      "leftHand": "D2:q A2:q G2:q D3:q",
+      "dynamics": "ff",
+      "teachingNote": "Dm9 to Gm7 — the climax. Both hands are fully active. Focus on timing."
+    },
+    {
+      "number": 8,
+      "rightHand": "G4:q A4:q F4:h",
+      "leftHand": "C2:q E2:q F2:h",
+      "dynamics": "mf",
+      "teachingNote": "C9 to Fmaj7 — resolution. The bass walks C-E-F, guiding us home."
+    }
+  ]
+}

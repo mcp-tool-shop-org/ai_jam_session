@@ -1,0 +1,93 @@
+{
+  "id": "besame-mucho",
+  "title": "Besame Mucho",
+  "genre": "latin",
+  "composer": "Consuelo Velazquez",
+  "difficulty": "intermediate",
+  "key": "D minor",
+  "tempo": 108,
+  "timeSignature": "4/4",
+  "durationSeconds": 18,
+  "tags": [
+    "bolero",
+    "romantic",
+    "mexican",
+    "standard",
+    "minor-key"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "One of the most performed Latin songs ever written, this bolero by Consuelo Velazquez is built on passionate D minor harmony with dramatic leaps in the melody. The arrangement captures the song's yearning quality through expressive chord voicings and a melody that reaches upward with romantic urgency. The bolero rhythm in the left hand provides a gentle, swaying pulse.",
+    "structure": "A section: Dm-Gm-A7-Dm (4 bars), B section: chromatic intensification (4 bars)",
+    "keyMoments": [
+      "Bar 1: Dm — the melody's opening leap from D to A sets the passionate tone.",
+      "Bar 3: A7 — the dominant with its sharp leading tone C#. Maximum tension.",
+      "Bars 5-6: The bridge lifts to Bb major — a moment of warmth in the minor landscape."
+    ],
+    "teachingGoals": [
+      "Bolero rhythm pattern in the left hand",
+      "Expressive melodic leaps — reaching with intention",
+      "Minor key romantic expression with chromatic harmony"
+    ],
+    "styleTips": [
+      "Play with passion but control — bolero is smoldering, not explosive",
+      "Melody should sing and sustain — use pedal for legato",
+      "Left hand bolero pattern: bass note, then chord, gently rocking"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "D4:q A4:q A4:q G4:q",
+      "leftHand": "D3:q A3 D4:q D3:q A3 D4:q",
+      "dynamics": "mp",
+      "teachingNote": "Dm — the leap from D to A is the soul of the melody. Make it yearning."
+    },
+    {
+      "number": 2,
+      "rightHand": "F4:q G4:q A4:h",
+      "leftHand": "G3:q Bb3 D4:q G3:q Bb3 D4:q",
+      "teachingNote": "Gm — melody climbs stepwise. The bolero rhythm keeps swaying."
+    },
+    {
+      "number": 3,
+      "rightHand": "G4:q F4:q E4:q D4:q",
+      "leftHand": "A2:q C#3 E3:q A2:q C#3 E3:q",
+      "dynamics": "mf",
+      "teachingNote": "A7 — dominant tension. C# in the left hand pulls toward D."
+    },
+    {
+      "number": 4,
+      "rightHand": "D4:h R:q D4:q",
+      "leftHand": "D3:q A3 D4:q D3:h",
+      "teachingNote": "Dm — resolution. The rest lets the phrase breathe before the next section."
+    },
+    {
+      "number": 5,
+      "rightHand": "D4:q F4:q Bb4:q A4:q",
+      "leftHand": "Bb2:q D3:q F3:q Bb3:q",
+      "dynamics": "mf",
+      "teachingNote": "Bb major — warm contrast to the minor. Melody stretches to Bb4."
+    },
+    {
+      "number": 6,
+      "rightHand": "A4:q G4:q F4:q E4:q",
+      "leftHand": "C3:q E3:q G3:q Bb3:q",
+      "dynamics": "f",
+      "teachingNote": "C7 — descending melody with rising intensity. Dramatic contrast."
+    },
+    {
+      "number": 7,
+      "rightHand": "F4:q E4:q D4:q C#4:q",
+      "leftHand": "A2:q C#3:q E3:q G3:q",
+      "teachingNote": "A7 — chromatic descent in the melody. C# is the final pull toward home."
+    },
+    {
+      "number": 8,
+      "rightHand": "D4:w",
+      "leftHand": "D3:q A3 D4:q D3:h",
+      "dynamics": "p",
+      "teachingNote": "Dm — whole note resolution. Let it ring with all the longing."
+    }
+  ]
+}

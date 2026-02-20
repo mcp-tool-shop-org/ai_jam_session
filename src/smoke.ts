@@ -84,8 +84,8 @@ initializeRegistry(builtinDir);
 
 // ─── Test 1: song library loads ─────────────────────────────────────────────
 console.log("song library integration:");
-test("registry loads 10 songs", () => {
-  assert(getAllSongs().length === 10, "expected 10 songs");
+test("registry loads 100 songs", () => {
+  assert(getAllSongs().length >= 100, `expected 100+ songs, got ${getAllSongs().length}`);
 });
 
 test("all 10 genres covered", () => {
@@ -102,8 +102,8 @@ test("getSong finds moonlight sonata", () => {
 
 test("searchSongs by genre works", () => {
   const results = searchSongs({ genre: "jazz" });
-  assert(results.length === 1, `expected 1 jazz song, got ${results.length}`);
-  assert(results[0].id === "autumn-leaves", "wrong song");
+  assert(results.length >= 10, `expected 10+ jazz songs, got ${results.length}`);
+  assert(results.some(s => s.id === "autumn-leaves"), "autumn-leaves should be in jazz results");
 });
 
 // ─── Test 2: Note parser ────────────────────────────────────────────────────

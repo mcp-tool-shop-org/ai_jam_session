@@ -1,0 +1,91 @@
+{
+  "id": "baba-oriley",
+  "title": "Baba O'Riley",
+  "genre": "rock",
+  "composer": "Pete Townshend",
+  "difficulty": "intermediate",
+  "key": "F major",
+  "tempo": 116,
+  "timeSignature": "4/4",
+  "durationSeconds": 17,
+  "tags": [
+    "the-who",
+    "synth-riff",
+    "driving",
+    "energetic",
+    "classic-rock"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "The iconic synthesizer riff adapted for piano. Pete Townshend's pulsing, repetitive arpeggio was originally created on a Lowrey organ with a sequencer. This piano arrangement captures the hypnotic, driving quality of the riff, cycling through F and Bb with relentless eighth-note energy.",
+    "structure": "Riff (8 bars) — F major arpeggiated pattern with Bb and C chord variations",
+    "keyMoments": [
+      "Bars 1-4: The hypnotic F major riff — pure rhythmic energy building through repetition",
+      "Bars 5-6: Bb chord variation — the harmony shifts while the rhythmic pattern continues",
+      "Bars 7-8: C to F resolution — the riff completes its cycle with a satisfying cadence"
+    ],
+    "teachingGoals": [
+      "Rapid arpeggiated patterns at a brisk tempo",
+      "Maintaining energy and evenness across repeated patterns",
+      "Adaptation of synthesizer patterns for piano technique"
+    ],
+    "styleTips": [
+      "Play with mechanical precision — this was originally a sequenced synth pattern",
+      "Every note should be exactly the same volume and length — uniformity is the aesthetic",
+      "The left hand should anchor solidly while the right hand drives the pattern"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "C4:e F4:e A4:e C5:e A4:e F4:e C4:e F4:e",
+      "leftHand": "F2:h F3:h",
+      "teachingNote": "F major arpeggio — the driving riff begins. Keep it absolutely even.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "C4:e F4:e A4:e C5:e A4:e F4:e C4:e F4:e",
+      "leftHand": "F2:h F3:h",
+      "teachingNote": "Same pattern — repetition is the point. Lock into the groove."
+    },
+    {
+      "number": 3,
+      "rightHand": "C4:e F4:e A4:e C5:e A4:e F4:e C4:e F4:e",
+      "leftHand": "F2:h C3:h",
+      "teachingNote": "F major continues — the hypnotic quality builds with each repeat."
+    },
+    {
+      "number": 4,
+      "rightHand": "C4:e F4:e A4:e C5:e A4:e F4:e C4:e F4:e",
+      "leftHand": "F2:h F3:h",
+      "teachingNote": "Four bars of the same riff — you should be in a trance by now. That is the intention."
+    },
+    {
+      "number": 5,
+      "rightHand": "D4:e F4:e Bb4:e D5:e Bb4:e F4:e D4:e F4:e",
+      "leftHand": "Bb2:h F3:h",
+      "teachingNote": "Bb major — the same rhythmic pattern but the notes shift to Bb chord. A harmonic breath.",
+      "dynamics": "f"
+    },
+    {
+      "number": 6,
+      "rightHand": "D4:e F4:e Bb4:e D5:e Bb4:e F4:e D4:e F4:e",
+      "leftHand": "Bb2:h F3:h",
+      "teachingNote": "Bb continues — the contrast with F makes the return even more powerful."
+    },
+    {
+      "number": 7,
+      "rightHand": "C4:e E4:e G4:e C5:e G4:e E4:e C4:e E4:e",
+      "leftHand": "C3:h G2:h",
+      "teachingNote": "C major — the V chord. Energy building toward the final resolution."
+    },
+    {
+      "number": 8,
+      "rightHand": "C4:e F4:e A4:e C5:e A4:e F4:q.",
+      "leftHand": "F2:h F3:h",
+      "teachingNote": "Back to F — the riff completes its cycle. The last note holds slightly longer for closure.",
+      "dynamics": "mf"
+    }
+  ]
+}

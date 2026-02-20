@@ -1,0 +1,91 @@
+{
+  "id": "dont-stop-believin",
+  "title": "Don't Stop Believin'",
+  "genre": "rock",
+  "composer": "Steve Perry, Neal Schon & Jonathan Cain",
+  "difficulty": "beginner",
+  "key": "E major",
+  "tempo": 120,
+  "timeSignature": "4/4",
+  "durationSeconds": 16,
+  "tags": [
+    "journey",
+    "anthem",
+    "iconic-riff",
+    "beginner-friendly",
+    "arena-rock"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "One of the most recognizable piano intros in rock history. Jonathan Cain's opening riff is a simple broken chord pattern cycling through E-B-C#m-A. This beginner arrangement captures the essence of the riff with a simplified right-hand pattern and basic left-hand bass notes.",
+    "structure": "Intro-Verse riff (8 bars) — E-B-C#m-A repeated twice",
+    "keyMoments": [
+      "Bars 1-2: E to B — the bright, optimistic opening that everyone knows",
+      "Bars 3-4: C#m to A — the minor chord adds depth, then A brings it back to warmth",
+      "Bars 5-8: Same progression repeated — by the second time, your hands know the way"
+    ],
+    "teachingGoals": [
+      "Playing in E major — four sharps (F#, C#, G#, D#)",
+      "Simple broken chord patterns in the right hand",
+      "Maintaining steady eighth-note momentum"
+    ],
+    "styleTips": [
+      "Keep the rhythm steady and bright — this is feel-good arena rock",
+      "The right hand pattern should be light and bouncy, not heavy",
+      "Think of a crowd singing along — this music is meant to uplift"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "E4:e G#4:e B4:e E5:e B4:e G#4:e E4:e G#4:e",
+      "leftHand": "E2:h E3:h",
+      "teachingNote": "E major broken chord — the iconic opening riff. Bright and hopeful.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "F#4:e B4:e D#5:e B4:e F#4:e B4:e D#5:e B4:e",
+      "leftHand": "B2:h B2:h",
+      "teachingNote": "B major — same pattern transposed. The D# gives the major third its brightness."
+    },
+    {
+      "number": 3,
+      "rightHand": "E4:e G#4:e C#5:e G#4:e E4:e G#4:e C#5:e G#4:e",
+      "leftHand": "C#3:h C#3:h",
+      "teachingNote": "C# minor — the only minor chord. Notice G# stays while B changes to C#5. Subtle shift."
+    },
+    {
+      "number": 4,
+      "rightHand": "E4:e A4:e C#5:e A4:e E4:e A4:e C#5:e A4:e",
+      "leftHand": "A2:h A2:h",
+      "teachingNote": "A major — warm and grounding. The IV chord feels like coming home before the loop."
+    },
+    {
+      "number": 5,
+      "rightHand": "E4:e G#4:e B4:e E5:e B4:e G#4:e E4:e G#4:e",
+      "leftHand": "E2:h E3:h",
+      "teachingNote": "E major again — second time through. Your fingers should be finding the patterns now."
+    },
+    {
+      "number": 6,
+      "rightHand": "F#4:e B4:e D#5:e B4:e F#4:e B4:e D#5:e B4:e",
+      "leftHand": "B2:h B2:h",
+      "teachingNote": "B major — same as bar 2. Repetition builds confidence and groove."
+    },
+    {
+      "number": 7,
+      "rightHand": "E4:e G#4:e C#5:e G#4:e E4:e G#4:e C#5:e G#4:e",
+      "leftHand": "C#3:h C#3:h",
+      "teachingNote": "C# minor — the bittersweet moment before the final resolution.",
+      "dynamics": "f"
+    },
+    {
+      "number": 8,
+      "rightHand": "E4:e A4:e C#5:e A4:e E4:h",
+      "leftHand": "A2:h E2:h",
+      "teachingNote": "A to E — the phrase closes on the tonic. You just played one of rock's greatest piano parts.",
+      "dynamics": "mf"
+    }
+  ]
+}

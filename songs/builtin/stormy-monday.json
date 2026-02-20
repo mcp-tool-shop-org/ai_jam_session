@@ -1,0 +1,94 @@
+{
+  "id": "stormy-monday",
+  "title": "Call It Stormy Monday (But Tuesday Is Just as Bad)",
+  "genre": "blues",
+  "composer": "T-Bone Walker",
+  "difficulty": "intermediate",
+  "key": "G major",
+  "tempo": 72,
+  "timeSignature": "4/4",
+  "durationSeconds": 27,
+  "tags": [
+    "slow-blues",
+    "t-bone-walker",
+    "jazz-blues",
+    "9th-chords",
+    "classic",
+    "sophisticated"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "T-Bone Walker's 1947 classic is the gold standard for slow, sophisticated blues. Unlike basic 12-bar blues, Stormy Monday uses jazzy 9th chords and a turnaround that passes through unusual changes. The slow tempo demands expressive phrasing — every note must count.",
+    "structure": "12-bar blues with jazz substitutions. This excerpt: first 8 bars",
+    "keyMoments": [
+      "Bar 1-2: G9 — the rich 9th chord sets this apart from basic blues immediately",
+      "Bar 3-4: G9 continues with melodic embellishments — slow and expressive",
+      "Bar 5-6: C9 (IV chord) — same lush voicing moved to the subdominant",
+      "Bar 7-8: Return to G9 — the melody weeps and sighs"
+    ],
+    "teachingGoals": [
+      "9th chord voicings — richer than basic dominant 7ths",
+      "Slow blues phrasing — stretching time, bending the beat",
+      "Dynamic control at slow tempos — every note has weight"
+    ],
+    "styleTips": [
+      "This is SLOW — do not rush. Let every note breathe and decay.",
+      "The 9th chords give a sophisticated, jazzy color. Lean into them.",
+      "Think of a vocalist on every melody note — where would they breathe?"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "B4:q D5:q F5:q A5:q",
+      "leftHand": "G2:q B2 F3:q G2:q B2 F3:q",
+      "teachingNote": "G9 — the 9th chord (G-B-D-F-A). Left hand plays root + shell. The 9th (A) on top adds color.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 2,
+      "rightHand": "G5:q F5:e D5:e B4:h",
+      "leftHand": "G2:q B2 F3:q G2:q B2 F3:q",
+      "teachingNote": "G9 — melody descends through the chord. Take your time. This is the blues at its most expressive."
+    },
+    {
+      "number": 3,
+      "rightHand": "Bb4:e B4:e D5:q R:q G4:q",
+      "leftHand": "G2:q B2 F3:q G2:h",
+      "teachingNote": "G9 — the Bb grace note sliding into B is the blue note smear. Essential blues technique.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 4,
+      "rightHand": "A4:q Bb4:e B4:e D5:h",
+      "leftHand": "G2:q B2 F3:q G2:q D3:q",
+      "teachingNote": "G9 — more blue note movement. The Bb-B slide appears again. It is the voice of the blues."
+    },
+    {
+      "number": 5,
+      "rightHand": "E5:q G5:q Bb4:q D5:q",
+      "leftHand": "C3:q E3 Bb3:q C3:q E3 Bb3:q",
+      "teachingNote": "C9 — same 9th voicing on the IV chord. The 9th (D) and b7 (Bb) give it richness.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 6,
+      "rightHand": "C5:q Bb4:e G4:e E4:h",
+      "leftHand": "C3:q E3 Bb3:q C3:h",
+      "teachingNote": "C9 — melody descends through the IV chord. Same expressive approach."
+    },
+    {
+      "number": 7,
+      "rightHand": "B4:q D5:q A4:h",
+      "leftHand": "G2:q B2 F3:q G2:q B2 F3:q",
+      "teachingNote": "G9 — back home. The 9th (A) is the resolution note. Let it hang in the air.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 8,
+      "rightHand": "G4:q Bb4:e B4:e D5:q F5:q",
+      "leftHand": "G2:q B2 D3:q F3:q D3:q",
+      "teachingNote": "G9 — ascending run building toward the V chord. The blue note Bb slides into B again."
+    }
+  ]
+}

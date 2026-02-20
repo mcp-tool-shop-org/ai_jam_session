@@ -1,0 +1,92 @@
+{
+  "id": "piano-man",
+  "title": "Piano Man",
+  "genre": "pop",
+  "composer": "Billy Joel",
+  "difficulty": "intermediate",
+  "key": "C major",
+  "tempo": 104,
+  "timeSignature": "3/4",
+  "durationSeconds": 14,
+  "tags": [
+    "billy-joel",
+    "waltz",
+    "3/4-time",
+    "iconic",
+    "storytelling"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "The quintessential piano song in 3/4 waltz time. Billy Joel's signature piece uses a bouncing waltz pattern that propels the storytelling forward. This arrangement covers the verse section with its classic C-G-F-C movement and the characteristic oom-pah-pah left hand.",
+    "structure": "Verse (8 bars in 3/4) — C-G/B-F/A-C waltz pattern with melodic development",
+    "keyMoments": [
+      "Bars 1-2: C major waltz — the iconic 'oom-pah-pah' pattern establishes the bar-room feel",
+      "Bars 3-4: F to G — the melody climbs, building narrative momentum",
+      "Bars 7-8: Am to G to C — the verse resolution with a satisfying cadence"
+    ],
+    "teachingGoals": [
+      "Playing in 3/4 time — feeling three beats per measure",
+      "Left-hand waltz pattern: bass note followed by two chord tones",
+      "Coordinating a lyrical melody over a rhythmic accompaniment"
+    ],
+    "styleTips": [
+      "Emphasize beat 1 in the left hand — the 'oom' should be slightly louder than the 'pah-pah'",
+      "Right hand sings the melody above the waltz — think of it as a vocalist over a piano bar trio",
+      "Keep a steady, swaying tempo — this is dance music at heart"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "E4:q E4:q D4:q",
+      "leftHand": "C3:q E3:q G3:q",
+      "teachingNote": "C major waltz begins — bass on 1, chord on 2-3. The right hand melody starts simply.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "C4:q D4:q E4:q",
+      "leftHand": "G2:q B2:q D3:q",
+      "teachingNote": "G major — the melody climbs C-D-E. Notice the bass walks down from C to G."
+    },
+    {
+      "number": 3,
+      "rightHand": "F4:q E4:q D4:q",
+      "leftHand": "F2:q A2:q C3:q",
+      "teachingNote": "F major — melody peaks at F4 then descends. The waltz is in full swing now."
+    },
+    {
+      "number": 4,
+      "rightHand": "C4:h.",
+      "leftHand": "C3:q E3:q G3:q",
+      "teachingNote": "Back to C — hold the melody note for the full bar. A moment to breathe."
+    },
+    {
+      "number": 5,
+      "rightHand": "E4:q E4:q F4:q",
+      "leftHand": "A2:q C3:q E3:q",
+      "teachingNote": "A minor — the mood shifts slightly darker. The melody pushes upward.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 6,
+      "rightHand": "G4:q F4:q E4:q",
+      "leftHand": "G2:q B2:q D3:q",
+      "teachingNote": "G major — melody arches up to G4 then descends. Building toward the phrase ending.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 7,
+      "rightHand": "D4:q E4:q D4:q",
+      "leftHand": "F2:q A2:q C3:q",
+      "teachingNote": "F major — a gentle melodic oscillation before the final resolution."
+    },
+    {
+      "number": 8,
+      "rightHand": "C4:h.",
+      "leftHand": "G2:q D3:q G2:q",
+      "teachingNote": "G to C implied — the phrase ends on C, ready to cycle back. The waltz never really stops.",
+      "dynamics": "mp"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "desafinado",
+  "title": "Desafinado",
+  "genre": "latin",
+  "composer": "Antonio Carlos Jobim / Newton Mendonca",
+  "difficulty": "advanced",
+  "key": "F major",
+  "tempo": 126,
+  "timeSignature": "4/4",
+  "durationSeconds": 15,
+  "tags": [
+    "bossa-nova",
+    "jobim",
+    "chromatic",
+    "advanced-harmony",
+    "brazilian"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Jobim's witty bossa nova about being out of tune is itself a masterclass in sophisticated harmony. The melody deliberately uses chromatic passing tones and altered chord extensions, creating a charming 'slightly off' quality that is actually perfectly calculated. The chord progression moves through diminished and augmented chords with elegant voice leading.",
+    "structure": "A section: Fmaj7 through chromatic descents (4 bars), B section: altered dominants and tritone subs (4 bars)",
+    "keyMoments": [
+      "Bar 1: Fmaj7 — deceptively simple opening before the chromatic adventure.",
+      "Bar 3: The Ab diminished passing chord — the 'desafinado' moment.",
+      "Bars 5-7: Chain of altered dominants — the harmonic heart of the piece."
+    ],
+    "teachingGoals": [
+      "Chromatic voice leading in jazz context",
+      "Diminished and augmented chord voicings",
+      "Playing 'wrong' notes that are actually right — altered extensions"
+    ],
+    "styleTips": [
+      "The chromatic notes should sound deliberate, not accidental",
+      "Bossa rhythm stays constant even when harmony gets adventurous",
+      "Think of the melody as a singer who knows exactly how 'off' to be"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "A4:q G4:e A4:e Bb4:q A4:q",
+      "leftHand": "F2:q A3 C4 E4:q F2:q A3 C4 E4:q",
+      "dynamics": "mp",
+      "teachingNote": "Fmaj7 — clean opening. Bb is the first chromatic hint."
+    },
+    {
+      "number": 2,
+      "rightHand": "G4:q F4:e G4:e Ab4:q G4:q",
+      "leftHand": "G2:q B3 D4 F4:q G2:q B3 D4 F4:q",
+      "teachingNote": "G7 — same pattern, down a step. Ab4 is the chromatic spice."
+    },
+    {
+      "number": 3,
+      "rightHand": "F4:q E4:q Eb4:q D4:q",
+      "leftHand": "Ab2:q B3 D4 F4:q Ab2:q B3 D4 F4:q",
+      "dynamics": "mf",
+      "teachingNote": "Abdim7 — the 'out of tune' moment. Eb against F creates the tension."
+    },
+    {
+      "number": 4,
+      "rightHand": "D4:q E4:q F4:h",
+      "leftHand": "G2:q Bb3 Db4 E4:q C2:q E3 G3 Bb3:q",
+      "teachingNote": "G7b9 to C7 — resolution through altered dominant. Complex but beautiful."
+    },
+    {
+      "number": 5,
+      "rightHand": "A4:q Ab4:q G4:q Gb4:q",
+      "leftHand": "D2:q F3 A3 C4:q Db2:q F3 Ab3 B3:q",
+      "dynamics": "mf",
+      "teachingNote": "Dm7 to Db7 — tritone substitution. Every note descends chromatically."
+    },
+    {
+      "number": 6,
+      "rightHand": "F4:q E4:e F4:e G4:q A4:q",
+      "leftHand": "C2:q E3 G3 Bb3:q C2:q E3 G3 Bb3:q",
+      "dynamics": "f",
+      "teachingNote": "C7 — melody starts climbing back. The tension wants to resolve."
+    },
+    {
+      "number": 7,
+      "rightHand": "Bb4:q A4:q Ab4:q G4:q",
+      "leftHand": "F2:q A3 C4 Eb4:q Bb2:q D3 F3 Ab3:q",
+      "teachingNote": "F7 to Bbm — another chromatic descent. Every chord has a story."
+    },
+    {
+      "number": 8,
+      "rightHand": "A4:q G4:q F4:h",
+      "leftHand": "C2:q E3 G3 Bb3:q F2:q A2:q",
+      "dynamics": "p",
+      "teachingNote": "C7 to F — home at last. The chromatic journey resolves to pure F major."
+    }
+  ]
+}

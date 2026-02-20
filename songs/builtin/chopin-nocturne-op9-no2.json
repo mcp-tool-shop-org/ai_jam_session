@@ -1,0 +1,70 @@
+{
+  "id": "chopin-nocturne-op9-no2",
+  "title": "Nocturne in Eb Major, Op. 9 No. 2",
+  "genre": "classical",
+  "composer": "Frederic Chopin",
+  "difficulty": "intermediate",
+  "key": "Eb major",
+  "tempo": 66,
+  "timeSignature": "12/8",
+  "durationSeconds": 29,
+  "tags": ["classical", "chopin", "nocturne", "romantic", "lyrical"],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Chopin's most beloved Nocturne, Op. 9 No. 2, features one of the most singing melodies ever written for piano. This simplified 8-bar excerpt captures the essential theme: a soaring right-hand melody over gently rocking left-hand arpeggios in 12/8 time.",
+    "structure": "Main theme excerpt (8 bars in 12/8)",
+    "keyMoments": ["Opening melodic statement in measure 1", "Ornamental turn in measure 5"],
+    "teachingGoals": ["Develop singing legato tone in the right hand", "Practice wide left-hand arpeggio patterns"],
+    "styleTips": ["The melody should sing as if a vocalist were performing it", "Left hand arpeggios should be very soft and even — a cushion for the melody"]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "R:q Bb4:q G4:q Bb4:h.",
+      "leftHand": "Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e",
+      "dynamics": "p"
+    },
+    {
+      "number": 2,
+      "rightHand": "R:q Bb4:q Ab4:q G4:h.",
+      "leftHand": "Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e",
+      "dynamics": "p"
+    },
+    {
+      "number": 3,
+      "rightHand": "R:q F4:q G4:q Ab4:q Bb4:q C5:q",
+      "leftHand": "Ab2:e Eb3:e Ab3:e C3:e Eb3:e Ab3:e Ab2:e Eb3:e Ab3:e C3:e Eb3:e Ab3:e",
+      "dynamics": "mp"
+    },
+    {
+      "number": 4,
+      "rightHand": "Bb4:h. R:h.",
+      "leftHand": "Bb2:e F3:e Bb3:e D3:e F3:e Bb3:e Bb2:e F3:e Bb3:e D3:e F3:e Bb3:e",
+      "dynamics": "mp"
+    },
+    {
+      "number": 5,
+      "rightHand": "R:q Bb4:q G4:q Bb4:q C5:q D5:q",
+      "leftHand": "Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e",
+      "dynamics": "mf"
+    },
+    {
+      "number": 6,
+      "rightHand": "Eb5:h. D5:q C5:q Bb4:q",
+      "leftHand": "Ab2:e Eb3:e Ab3:e C3:e Eb3:e Ab3:e F2:e C3:e F3:e Ab2:e C3:e F3:e",
+      "dynamics": "mf"
+    },
+    {
+      "number": 7,
+      "rightHand": "Ab4:q G4:q F4:q Eb4:h.",
+      "leftHand": "Bb2:e F3:e Bb3:e D3:e F3:e Bb3:e Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e",
+      "dynamics": "mp"
+    },
+    {
+      "number": 8,
+      "rightHand": "Eb4:h. R:h.",
+      "leftHand": "Eb3:e Bb3:e Eb4:e G3:e Bb3:e Eb4:e Eb2:h. R:h.",
+      "dynamics": "p"
+    }
+  ]
+}

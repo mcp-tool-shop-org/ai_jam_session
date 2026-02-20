@@ -1,0 +1,93 @@
+{
+  "id": "georgia-on-my-mind",
+  "title": "Georgia On My Mind",
+  "genre": "rnb",
+  "composer": "Hoagy Carmichael / Stuart Gorrell",
+  "difficulty": "intermediate",
+  "key": "F major",
+  "tempo": 66,
+  "timeSignature": "4/4",
+  "durationSeconds": 29,
+  "tags": [
+    "soul-ballad",
+    "ray-charles",
+    "jazz-harmony",
+    "classic",
+    "standard"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Ray Charles' definitive soul ballad reading of this Hoagy Carmichael standard. The arrangement uses rich jazz voicings with major seventh and ninth chords. The melody is deeply lyrical, moving in gentle arcs over a lush harmonic backdrop. The slow tempo demands expressive control and beautiful tone.",
+    "structure": "A section (4 bars) with chromatic inner voice movement, B section (4 bars) with richer harmony",
+    "keyMoments": [
+      "Bar 1: Fmaj7 opens with warmth — the 'Georgia' call.",
+      "Bars 3-4: The chromatic bass descent from F to D — heart of the arrangement.",
+      "Bars 7-8: The Gm7-C7 turnaround — classic jazz resolution back to F."
+    ],
+    "teachingGoals": [
+      "Jazz chord voicings — major 7ths and minor 7ths on piano",
+      "Slow ballad phrasing — rubato and expressive timing",
+      "Chromatic bass lines connecting diatonic chords"
+    ],
+    "styleTips": [
+      "Play like Ray Charles is singing — every note should have weight and meaning",
+      "Use sustain pedal generously but change on each chord",
+      "The tempo should breathe — slight rubato on the melody peaks"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "A4:q G4:e F4:e A4:h",
+      "leftHand": "F2:q A2:q C3:q E3:q",
+      "dynamics": "mp",
+      "teachingNote": "Fmaj7 — the melody arcs gently. Let 'Georgia' sing."
+    },
+    {
+      "number": 2,
+      "rightHand": "G4:q F4:q E4:h",
+      "leftHand": "A2:q C3:q E3:q A3:q",
+      "teachingNote": "Am7 — melody descends. Inner voice stays warm."
+    },
+    {
+      "number": 3,
+      "rightHand": "F4:q A4:q G4:q F4:q",
+      "leftHand": "Bb2:q D3:q F3:q Bb3:q",
+      "dynamics": "mf",
+      "teachingNote": "Bbmaj7 — the harmony opens up. Let the left hand sing too."
+    },
+    {
+      "number": 4,
+      "rightHand": "E4:q D4:q C4:h",
+      "leftHand": "A2:q C3:q E3:q G3:q",
+      "teachingNote": "Am7 to resolution — the chromatic descent lands gently."
+    },
+    {
+      "number": 5,
+      "rightHand": "F4:q G4:q A4:q Bb4:q",
+      "leftHand": "D2:q F2:q A2:q D3:q",
+      "dynamics": "mf",
+      "teachingNote": "Dm7 — the bridge section. Melody climbs with more purpose."
+    },
+    {
+      "number": 6,
+      "rightHand": "A4:h G4:h",
+      "leftHand": "G2:q Bb2:q D3:q F3:q",
+      "teachingNote": "Gm7 — sustained melody over moving bass. Let it breathe."
+    },
+    {
+      "number": 7,
+      "rightHand": "A4:q G4:e F4:e E4:q F4:q",
+      "leftHand": "C2:q E2:q G2:q Bb2:q",
+      "dynamics": "f",
+      "teachingNote": "C7 — the dominant. Melody is most expressive here, leaning into resolution."
+    },
+    {
+      "number": 8,
+      "rightHand": "F4:w",
+      "leftHand": "F2:q A2:q C3:q F3:q",
+      "dynamics": "p",
+      "teachingNote": "Home on Fmaj7 — whole note F. All the longing resolves here."
+    }
+  ]
+}

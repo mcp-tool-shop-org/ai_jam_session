@@ -1,0 +1,94 @@
+{
+  "id": "pink-panther",
+  "title": "The Pink Panther Theme",
+  "genre": "film",
+  "composer": "Henry Mancini",
+  "difficulty": "intermediate",
+  "key": "E minor",
+  "tempo": 120,
+  "timeSignature": "4/4",
+  "durationSeconds": 16,
+  "tags": [
+    "mancini",
+    "jazzy",
+    "chromatic",
+    "mystery",
+    "swing"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Henry Mancini's slinky, chromatic theme is one of the most instantly recognizable melodies in cinema. Built on a chromatic creeping figure in E minor, the theme captures the sneaky, cat-like quality of the animated panther. The arrangement uses jazz swing feel with walking chromatic lines and punchy staccato chords. The left hand plays a cool jazz bass pattern.",
+    "structure": "Intro creep (2 bars), Main riff with chromatic climb (4 bars), Tag (2 bars)",
+    "keyMoments": [
+      "Bars 1-2: The famous chromatic creep — E-F-F#-G. The panther appears.",
+      "Bars 5-6: The riff hits its stride with the jazzy chord stabs.",
+      "Bar 8: The sly ending — chromatic slide back to E. The panther vanishes."
+    ],
+    "teachingGoals": [
+      "Chromatic movement — half-step creeping motion",
+      "Jazz swing feel — slightly uneven eighth notes",
+      "Staccato articulation for the sneaky character"
+    ],
+    "styleTips": [
+      "Slinky and sneaky — imagine tiptoeing past a security guard",
+      "Swing the eighth notes slightly — not straight, not full shuffle",
+      "Every note should be staccato and precise — the panther is smooth"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "R:h E4:e F4:e F#4:e G4:e",
+      "leftHand": "E2:q B2:q E2:q B2:q",
+      "dynamics": "pp",
+      "teachingNote": "The chromatic creep begins after a half rest. Quiet and slinky."
+    },
+    {
+      "number": 2,
+      "rightHand": "A4:q R:q E4:e F4:e F#4:e G4:e",
+      "leftHand": "E2:q B2:q E2:q B2:q",
+      "dynamics": "mp",
+      "teachingNote": "A4 stab then repeat the creep. The panther keeps sneaking."
+    },
+    {
+      "number": 3,
+      "rightHand": "A4:q R:q C5:e R:e A4:e R:e",
+      "leftHand": "E2:q B2:q A2:q E3:q",
+      "dynamics": "mf",
+      "teachingNote": "Staccato stabs — A4, C5, A4. Punchy jazz accents."
+    },
+    {
+      "number": 4,
+      "rightHand": "B4:q R:q E4:e F4:e F#4:e G4:e",
+      "leftHand": "B2:q F#3:q E2:q B2:q",
+      "teachingNote": "B4 stab then back to the creep. The riff is circular."
+    },
+    {
+      "number": 5,
+      "rightHand": "A4:q R:e B4:e C5:q R:e D5:e",
+      "leftHand": "A2:q E3:q A2:q D3:q",
+      "dynamics": "f",
+      "teachingNote": "The melody climbs — A, B, C, D. Building sneaky energy."
+    },
+    {
+      "number": 6,
+      "rightHand": "E5:q D5:q C5:q B4:q",
+      "leftHand": "E2:q B2:q A2:q E3:q",
+      "teachingNote": "Peak and descent — E5 is the high point. Everything staccato."
+    },
+    {
+      "number": 7,
+      "rightHand": "A4:q G4:q F#4:q F4:q",
+      "leftHand": "F#2:q C#3:q F2:q C3:q",
+      "dynamics": "mf",
+      "teachingNote": "Chromatic descent — the reverse of the opening creep."
+    },
+    {
+      "number": 8,
+      "rightHand": "E4:q R:q R:h",
+      "leftHand": "E2:q B2:q E2:h",
+      "dynamics": "p",
+      "teachingNote": "E stab then silence. The panther has disappeared. Cool ending."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "fly-me-to-the-moon",
+  "title": "Fly Me to the Moon",
+  "genre": "jazz",
+  "composer": "Bart Howard",
+  "difficulty": "beginner",
+  "key": "C major",
+  "tempo": 120,
+  "timeSignature": "4/4",
+  "durationSeconds": 16,
+  "tags": [
+    "jazz-standard",
+    "sinatra",
+    "swing",
+    "beginner-friendly",
+    "great-american-songbook",
+    "romantic"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "One of the most beloved jazz standards ever written. Originally titled 'In Other Words,' it became Frank Sinatra's signature after his 1964 recording. The melody descends in a graceful sequence through the circle of fifths, making it a perfect first jazz standard for piano students.",
+    "structure": "ABAB — 32 bars. This excerpt: first 8 bars (A section)",
+    "keyMoments": [
+      "Bar 1-2: Am7 — the melody begins on C5 and descends stepwise. Instantly recognizable.",
+      "Bar 3-4: Dm7 to G7 — the ii-V that defines the harmonic motion",
+      "Bar 7-8: Em7 to A7 — the iii-VI introduces a secondary dominant pull"
+    ],
+    "teachingGoals": [
+      "Descending stepwise melody — easy to memorize and sing",
+      "Basic jazz chord progression: vi - ii - V - I",
+      "Simple left-hand shell voicings with root and seventh"
+    ],
+    "styleTips": [
+      "Swing the eighth notes — long-short, not even",
+      "The melody should be legato and lyrical — imagine singing the words",
+      "Left hand keeps it simple — whole notes or half notes are fine for beginners"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "C5:q B4:q A4:q G4:q",
+      "leftHand": "A2:h E3:h",
+      "teachingNote": "Am7 — descending scale from C. This is the opening everyone knows.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "F4:h R:h",
+      "leftHand": "A2:h E3:h",
+      "teachingNote": "The phrase lands on F and rests. Let the note ring."
+    },
+    {
+      "number": 3,
+      "rightHand": "B4:q A4:q G4:q F4:q",
+      "leftHand": "D3:h A3:h",
+      "teachingNote": "Dm7 — same descending pattern, starting a step lower. Sequence!"
+    },
+    {
+      "number": 4,
+      "rightHand": "E4:h R:h",
+      "leftHand": "G2:h F3:h",
+      "teachingNote": "G7 — phrase lands on E. The V chord wants to resolve to C."
+    },
+    {
+      "number": 5,
+      "rightHand": "A4:q G4:q F4:q E4:q",
+      "leftHand": "C3:h G3:h",
+      "teachingNote": "CMaj7 — the I chord arrives! The melody continues its descent."
+    },
+    {
+      "number": 6,
+      "rightHand": "D4:h R:h",
+      "leftHand": "C3:h G3:h",
+      "teachingNote": "CMaj7 continues. Simple and elegant. Less is more."
+    },
+    {
+      "number": 7,
+      "rightHand": "G4:q F4:q E4:q D4:q",
+      "leftHand": "E3:h B3:h",
+      "teachingNote": "Em7 — the iii chord. Pattern descends yet again. Notice the sequence."
+    },
+    {
+      "number": 8,
+      "rightHand": "C4:h R:h",
+      "leftHand": "A2:h E3:h",
+      "teachingNote": "A7 — secondary dominant. The phrase resolves to C4. Ready for the next section.",
+      "dynamics": "p"
+    }
+  ]
+}

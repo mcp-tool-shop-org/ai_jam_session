@@ -1,0 +1,93 @@
+{
+  "id": "a-thousand-years",
+  "title": "A Thousand Years",
+  "genre": "pop",
+  "composer": "Christina Perri & David Hodges",
+  "difficulty": "beginner",
+  "key": "Bb major",
+  "tempo": 66,
+  "timeSignature": "4/4",
+  "durationSeconds": 29,
+  "tags": [
+    "christina-perri",
+    "romantic",
+    "ballad",
+    "beginner-friendly",
+    "wedding"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "A modern romantic ballad with a gentle, flowing quality. The song uses a simple I-V-vi-IV progression in Bb major with a tender melodic line. This beginner arrangement simplifies the arpeggiated accompaniment to block chords while preserving the emotional melody.",
+    "structure": "Verse (8 bars) — Bb-F-Gm-Eb repeated with melodic development",
+    "keyMoments": [
+      "Bars 1-2: Bb to F — the warm, open beginning that sets the romantic tone",
+      "Bars 3-4: Gm to Eb — the emotional deepening as minor harmony enters",
+      "Bars 7-8: The melody reaches its highest point then settles — a miniature emotional arc"
+    ],
+    "teachingGoals": [
+      "Playing in Bb major — two flats (Bb and Eb)",
+      "Slow, sustained left-hand chords with a singing melody",
+      "Legato playing — connecting notes smoothly without gaps"
+    ],
+    "styleTips": [
+      "Everything should feel warm and connected — no gaps between notes",
+      "The slow tempo means every note matters — place each one carefully",
+      "Think of the right hand as a cello solo — rich, sustained, singing"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "F4:q D4:q F4:q G4:q",
+      "leftHand": "Bb2:h F3:h",
+      "teachingNote": "Bb major — the melody starts gently on the 5th degree. Warm and inviting.",
+      "dynamics": "p"
+    },
+    {
+      "number": 2,
+      "rightHand": "F4:h D4:h",
+      "leftHand": "F2:h C3:h",
+      "teachingNote": "F major — melody settles downward. Keep the left hand soft and sustained."
+    },
+    {
+      "number": 3,
+      "rightHand": "D4:q Eb4:q F4:q G4:q",
+      "leftHand": "G2:h D3:h",
+      "teachingNote": "G minor — the melody climbs stepwise. Notice the Eb — it gives the minor color.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 4,
+      "rightHand": "F4:h Eb4:h",
+      "leftHand": "Eb2:h Bb2:h",
+      "teachingNote": "Eb major — the IV chord. Melody relaxes downward to Eb."
+    },
+    {
+      "number": 5,
+      "rightHand": "F4:q D4:q F4:q Bb4:q",
+      "leftHand": "Bb2:h F3:h",
+      "teachingNote": "Bb major again — this time the melody reaches up to Bb4. Expanding the range.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 6,
+      "rightHand": "A4:q Bb4:q C5:h",
+      "leftHand": "F2:h C3:h",
+      "teachingNote": "F major — melody pushes to C5, the emotional peak of the phrase.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 7,
+      "rightHand": "Bb4:q A4:q G4:q F4:q",
+      "leftHand": "G2:h D3:h",
+      "teachingNote": "G minor — a descending line that releases the built-up tension."
+    },
+    {
+      "number": 8,
+      "rightHand": "F4:h Bb3:h",
+      "leftHand": "Eb2:q Bb2:q Bb2:h",
+      "teachingNote": "Eb to Bb — the phrase closes gently on the tonic. A sigh of contentment.",
+      "dynamics": "p"
+    }
+  ]
+}

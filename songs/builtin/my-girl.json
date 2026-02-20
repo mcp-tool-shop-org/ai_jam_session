@@ -1,0 +1,92 @@
+{
+  "id": "my-girl",
+  "title": "My Girl",
+  "genre": "rnb",
+  "composer": "Smokey Robinson / Ronald White",
+  "difficulty": "beginner",
+  "key": "C major",
+  "tempo": 104,
+  "timeSignature": "4/4",
+  "durationSeconds": 18,
+  "tags": [
+    "motown",
+    "temptations",
+    "classic",
+    "feel-good",
+    "bass-line"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "The Temptations' Motown classic features one of the most recognizable bass lines in popular music. This beginner arrangement focuses on that iconic ascending bass figure in the left hand while the right hand plays the sweet, simple melody. The C major tonality keeps everything bright and accessible.",
+    "structure": "Verse: 4 bars with iconic bass riff, Chorus: 4 bars with fuller chords",
+    "keyMoments": [
+      "Bars 1-2: The famous bass line walk-up — this IS the song.",
+      "Bars 5-6: 'My girl' chorus — the melody lifts with sustained notes.",
+      "Bar 8: The tag ending with the characteristic rhythmic figure."
+    ],
+    "teachingGoals": [
+      "Iconic bass line — learning a recognizable left hand pattern",
+      "Independence between hands — bass walks while melody sustains",
+      "Major key brightness and upbeat feel"
+    ],
+    "styleTips": [
+      "Left hand bass line should be smooth and connected (legato)",
+      "Right hand melody is sweet and lyrical — don't rush",
+      "Keep a gentle swing feel — not straight eighths, slightly bouncy"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "R:h E4:q G4:q",
+      "leftHand": "C3:q E3:q G3:q C4:q",
+      "dynamics": "mf",
+      "teachingNote": "The iconic bass walk-up. Right hand enters on beat 3."
+    },
+    {
+      "number": 2,
+      "rightHand": "E4:h C4:h",
+      "leftHand": "C3:q E3:q G3:q C4:q",
+      "teachingNote": "Bass repeats the walk — melody settles on C."
+    },
+    {
+      "number": 3,
+      "rightHand": "D4:q E4:q F4:q E4:q",
+      "leftHand": "F3:h C3:h",
+      "teachingNote": "F major chord underneath — melody rocks around E."
+    },
+    {
+      "number": 4,
+      "rightHand": "D4:q C4:q D4:h",
+      "leftHand": "G3:h G2:h",
+      "teachingNote": "G major — sets up the return. D is the leading tone to the chorus."
+    },
+    {
+      "number": 5,
+      "rightHand": "E4:h G4:h",
+      "leftHand": "C3:q E3:q G3:q E3:q",
+      "dynamics": "f",
+      "teachingNote": "Chorus — 'My girl.' Open and bright. Let it ring."
+    },
+    {
+      "number": 6,
+      "rightHand": "G4:q F4:q E4:h",
+      "leftHand": "F3:q A3:q C4:q A3:q",
+      "teachingNote": "F major — the melody descends gently."
+    },
+    {
+      "number": 7,
+      "rightHand": "D4:q E4:q F4:q D4:q",
+      "leftHand": "G2:q B2:q D3:q B2:q",
+      "dynamics": "mf",
+      "teachingNote": "G major — building energy for the final bar."
+    },
+    {
+      "number": 8,
+      "rightHand": "C4:q E4:q G4:q C5:q",
+      "leftHand": "C3:q G3:q C3:h",
+      "dynamics": "f",
+      "teachingNote": "Final ascending C major arpeggio — bright, happy ending."
+    }
+  ]
+}

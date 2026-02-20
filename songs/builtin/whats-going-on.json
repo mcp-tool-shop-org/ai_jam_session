@@ -1,0 +1,93 @@
+{
+  "id": "whats-going-on",
+  "title": "What's Going On",
+  "genre": "rnb",
+  "composer": "Marvin Gaye / Al Cleveland / Renaldo Benson",
+  "difficulty": "intermediate",
+  "key": "E major",
+  "tempo": 98,
+  "timeSignature": "4/4",
+  "durationSeconds": 20,
+  "tags": [
+    "smooth-soul",
+    "marvin-gaye",
+    "jazz-chords",
+    "protest",
+    "classic"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Marvin Gaye's smooth soul masterpiece floats on lush major seventh chords and a gently swaying rhythm. The arrangement emphasizes the song's dreamy quality with rich chord voicings in the left hand and a lyrical, unhurried melody in the right. The Emaj7 tonality gives it a warm, golden color.",
+    "structure": "Verse vamp: Emaj7-C#m7 alternation (4 bars), Bridge: F#m7-B7 movement (4 bars)",
+    "keyMoments": [
+      "Bars 1-2: Emaj7 to C#m7 — the signature floating vamp.",
+      "Bar 5: F#m7 — the harmony shifts and the energy lifts.",
+      "Bar 8: B7 turnaround — smooth dominant pull back to the top."
+    ],
+    "teachingGoals": [
+      "Major seventh chord voicings and their smooth sound",
+      "Relaxed groove playing — sitting back on the beat",
+      "Voice leading between related seventh chords"
+    ],
+    "styleTips": [
+      "Everything should feel effortless — never push or rush",
+      "The chords should shimmer, not thump — light left hand touch",
+      "Think of the melody as Marvin's voice — smooth, floating, intimate"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "G#4:q F#4:q E4:q D#4:q",
+      "leftHand": "E2:q G#2:q B2:q D#3:q",
+      "dynamics": "mp",
+      "teachingNote": "Emaj7 — golden, warm. Melody descends gently through the chord."
+    },
+    {
+      "number": 2,
+      "rightHand": "E4:q F#4:q G#4:h",
+      "leftHand": "C#3:q E3:q G#3:q B3:q",
+      "teachingNote": "C#m7 — relative minor. Melody climbs back up."
+    },
+    {
+      "number": 3,
+      "rightHand": "G#4:q F#4:q E4:q G#4:q",
+      "leftHand": "E2:q G#2:q B2:q D#3:q",
+      "teachingNote": "Emaj7 again — the vamp repeats. Settle into the groove."
+    },
+    {
+      "number": 4,
+      "rightHand": "F#4:q E4:q D#4:q C#4:q",
+      "leftHand": "C#3:q E3:q G#3:q B3:q",
+      "dynamics": "mf",
+      "teachingNote": "C#m7 — longer descent this time. Building toward the bridge."
+    },
+    {
+      "number": 5,
+      "rightHand": "C#4:q D#4:q E4:q F#4:q",
+      "leftHand": "F#2:q A2:q C#3:q E3:q",
+      "dynamics": "mf",
+      "teachingNote": "F#m7 — new harmonic color. The melody lifts with fresh energy."
+    },
+    {
+      "number": 6,
+      "rightHand": "G#4:q F#4:q E4:q D#4:q",
+      "leftHand": "B2:q D#3:q F#3:q A3:q",
+      "teachingNote": "B7 — dominant chord. Smooth tension wanting to resolve."
+    },
+    {
+      "number": 7,
+      "rightHand": "E4:q G#4:q F#4:q E4:q",
+      "leftHand": "E2:q G#2:q B2:q D#3:q",
+      "dynamics": "mp",
+      "teachingNote": "Back to Emaj7 — the resolution feels like coming home."
+    },
+    {
+      "number": 8,
+      "rightHand": "D#4:q E4:h R:q",
+      "leftHand": "C#3:q E3:q G#3:h",
+      "dynamics": "p",
+      "teachingNote": "C#m7 ending — the rest lets the chord ring out and fade."
+    }
+  ]
+}

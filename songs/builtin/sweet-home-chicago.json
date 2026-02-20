@@ -1,0 +1,93 @@
+{
+  "id": "sweet-home-chicago",
+  "title": "Sweet Home Chicago",
+  "genre": "blues",
+  "composer": "Robert Johnson",
+  "difficulty": "beginner",
+  "key": "E major",
+  "tempo": 116,
+  "timeSignature": "4/4",
+  "durationSeconds": 17,
+  "tags": [
+    "shuffle",
+    "robert-johnson",
+    "classic-blues",
+    "boogie",
+    "chicago-blues",
+    "12-bar"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Robert Johnson recorded this in 1936 and it became the anthem of Chicago blues. The shuffle groove is infectious — once you start, your foot will not stop tapping. The boogie-woogie left hand drives the train while the right hand plays a simple, singable melody.",
+    "structure": "12-bar blues with shuffle feel. This excerpt: first 8 bars",
+    "keyMoments": [
+      "Bar 1-2: E7 shuffle — the left hand boogie pattern locks in the groove immediately",
+      "Bar 3-4: E7 continues — repetition builds the hypnotic feel",
+      "Bar 5-6: A7 — IV chord shift. The boogie pattern moves with it.",
+      "Bar 7-8: E7 — back home. The shuffle never stops."
+    ],
+    "teachingGoals": [
+      "Shuffle/boogie-woogie left hand pattern",
+      "Basic 12-bar blues in E — a guitar-friendly key for jamming",
+      "Keeping a steady groove while adding simple right-hand melody"
+    ],
+    "styleTips": [
+      "The left hand is the engine — keep it absolutely steady",
+      "Shuffle means triplet feel on the eighths: long-SHORT long-SHORT",
+      "Right hand melody is secondary — the groove is what matters most"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "E4:q G#4:q B4:q D5:q",
+      "leftHand": "E2:q B2:q E3:q B2:q",
+      "teachingNote": "E7 — ascending through the chord. Left hand establishes the boogie bass: E-B-E-B.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "B4:q G#4:q E4:h",
+      "leftHand": "E2:q B2:q E3:q B2:q",
+      "teachingNote": "E7 — melody comes back down. Keep the left hand pumping."
+    },
+    {
+      "number": 3,
+      "rightHand": "E4:q G4:e G#4:e B4:q D5:q",
+      "leftHand": "E2:q B2:q E3:q B2:q",
+      "teachingNote": "E7 — the G natural sliding to G# is the blue note. That is the soul of this song."
+    },
+    {
+      "number": 4,
+      "rightHand": "B4:h E4:h",
+      "leftHand": "E2:q B2:q E3:q B2:q",
+      "teachingNote": "E7 — simplify with half notes. Rest your right hand while the left keeps going."
+    },
+    {
+      "number": 5,
+      "rightHand": "A4:q C#5:q E5:q G5:q",
+      "leftHand": "A2:q E3:q A3:q E3:q",
+      "teachingNote": "A7 — IV chord! Same boogie pattern shifted to A. The melody transposes too.",
+      "dynamics": "f"
+    },
+    {
+      "number": 6,
+      "rightHand": "E5:q C#5:q A4:h",
+      "leftHand": "A2:q E3:q A3:q E3:q",
+      "teachingNote": "A7 — descending. The G natural is gone here — A7 uses G# (its major 7th would be G#)."
+    },
+    {
+      "number": 7,
+      "rightHand": "E4:q G#4:q B4:q D5:q",
+      "leftHand": "E2:q B2:q E3:q B2:q",
+      "teachingNote": "E7 — back home. Same as bar 1. The groove is a circle.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 8,
+      "rightHand": "B4:q G#4:q E4:q D4:q",
+      "leftHand": "E2:q B2:q E3:q B2:q",
+      "teachingNote": "E7 — descending to D4 (the b7). Setting up for the turnaround V chord."
+    }
+  ]
+}

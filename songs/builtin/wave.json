@@ -1,0 +1,93 @@
+{
+  "id": "wave",
+  "title": "Wave",
+  "genre": "latin",
+  "composer": "Antonio Carlos Jobim",
+  "difficulty": "advanced",
+  "key": "D major",
+  "tempo": 126,
+  "timeSignature": "4/4",
+  "durationSeconds": 15,
+  "tags": [
+    "bossa-nova",
+    "jobim",
+    "advanced-harmony",
+    "brazilian",
+    "lyrical"
+  ],
+  "source": "Claude arrangement — simplified interpretation",
+  "musicalLanguage": {
+    "description": "Jobim's Wave is one of the most harmonically rich bossa novas, featuring a melody that sweeps up and down like ocean waves over constantly shifting chords. The piece moves through diminished chords, secondary dominants, and chromatic substitutions while maintaining the effortless bossa groove. The melody is one of Jobim's most beautiful — long, arching lines that require sophisticated phrasing.",
+    "structure": "A section: Dmaj7 through chromatic descent (4 bars), B section: Bbdim7-Am7-D7 circle (4 bars)",
+    "keyMoments": [
+      "Bar 1: Dmaj7 — the sweeping opening melody that gives the song its name.",
+      "Bars 3-4: Bbdim7 — the chromatic passing chord that creates the 'wave' motion.",
+      "Bars 5-7: Circle of secondary dominants — each chord pulls to the next."
+    ],
+    "teachingGoals": [
+      "Advanced bossa nova chord voicings with diminished passing chords",
+      "Long melodic phrases requiring breath and phrasing control",
+      "Chromatic voice leading in a bossa nova context"
+    ],
+    "styleTips": [
+      "The melody should feel like a wave — long sweeping arcs, not choppy",
+      "Each chord change should melt seamlessly into the next",
+      "Advanced does not mean loud — keep the intimate bossa dynamic"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "F#4:q A4:q D5:q C#5:q",
+      "leftHand": "D2:q F#3 A3 C#4:q D2:q F#3 A3 C#4:q",
+      "dynamics": "mp",
+      "teachingNote": "Dmaj7 — the sweeping melody rises. Like a wave building."
+    },
+    {
+      "number": 2,
+      "rightHand": "B4:q A4:q G4:q F#4:q",
+      "leftHand": "Bb2:q D3 F3 Ab3:q Bb2:q D3 F3 Ab3:q",
+      "teachingNote": "Bbdim7 — chromatic passing chord. The descent creates tension."
+    },
+    {
+      "number": 3,
+      "rightHand": "E4:q G4:q F#4:q E4:q",
+      "leftHand": "A2:q C#3 E3 G3:q A2:q C#3 E3 G3:q",
+      "dynamics": "mf",
+      "teachingNote": "Am7 — the wave falls. Melody settles into the mid-range."
+    },
+    {
+      "number": 4,
+      "rightHand": "D4:q E4:q F#4:h",
+      "leftHand": "D2:q F#3 A3 C4:q G2:q B3 D4 F#4:q",
+      "teachingNote": "D7 to Gmaj7 — secondary dominant. Melody rises again for the B section."
+    },
+    {
+      "number": 5,
+      "rightHand": "A4:q B4:q C5:q B4:q",
+      "leftHand": "G2:q B3 D4 F#4:q G2:q B3 D4 F#4:q",
+      "dynamics": "mf",
+      "teachingNote": "Gmaj7 — the B section melody reaches higher. Fuller sound."
+    },
+    {
+      "number": 6,
+      "rightHand": "A4:q G4:q F#4:q E4:q",
+      "leftHand": "G2:q Bb3 D4 F4:q C2:q E3 G3 Bb3:q",
+      "teachingNote": "Gm7 to C7 — borrowed minor. The wave crests and descends."
+    },
+    {
+      "number": 7,
+      "rightHand": "F#4:q A4:q G4:q F#4:q",
+      "leftHand": "F#2:q A3 C#4 E4:q B2:q D3 F#3 A3:q",
+      "dynamics": "f",
+      "teachingNote": "F#m7 to B7 — secondary dominants cascading. Rich harmony."
+    },
+    {
+      "number": 8,
+      "rightHand": "E4:q F#4:q D4:h",
+      "leftHand": "E2:q G3 B3 D4:q A2:q C#3 E3 G3:q",
+      "dynamics": "p",
+      "teachingNote": "Em7 to A7 — the final wave subsides, landing softly on the implied D."
+    }
+  ]
+}
