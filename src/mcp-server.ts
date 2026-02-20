@@ -2,19 +2,20 @@
 // ─── piano-sessions-ai: MCP Server ─────────────────────────────────────────
 //
 // Exposes the ai-music-sheets registry and session engine as MCP tools.
-// An LLM can browse songs, get teaching info, start sessions, and push
-// teaching interjections — all through the standard MCP protocol.
+// An LLM can browse songs, get teaching info, suggest practice setups,
+// and push teaching interjections — all through the standard MCP protocol.
 //
 // Usage:
 //   node dist/mcp-server.js          # stdio transport
 //
 // Tools:
 //   list_songs      — browse/search the song library
-//   song_info       — get detailed info for a specific song
+//   song_info       — get detailed info for a specific song (+ practice tips)
 //   registry_stats  — get registry statistics
-//   start_session   — create a playback session (no MIDI needed for info)
 //   teaching_note   — get the teaching note for a specific measure
 //   suggest_song    — get a song recommendation based on criteria
+//   list_measures   — overview of measures with teaching notes
+//   practice_setup  — suggest speed, mode, and voice settings for a song
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -30,13 +31,41 @@ import {
   GENRES,
   DIFFICULTIES,
 } from "ai-music-sheets";
-import type { SongEntry } from "ai-music-sheets";
+import type { SongEntry, Difficulty } from "ai-music-sheets";
+import { safeParseMeasure } from "./note-parser.js";
+import type { ParseWarning } from "./types.js";
+
+// ─── Helpers ────────────────────────────────────────────────────────────────
+
+/** Suggest practice speed based on song difficulty. */
+function suggestSpeed(difficulty: Difficulty): { speed: number; label: string } {
+  switch (difficulty) {
+    case "beginner":       return { speed: 0.5, label: "0.5× (half speed)" };
+    case "intermediate":   return { speed: 0.75, label: "0.75× (three-quarter speed)" };
+    case "advanced":       return { speed: 0.7, label: "0.7× (recommended for first pass)" };
+    default:               return { speed: 1.0, label: "1.0× (full speed)" };
+  }
+}
+
+/** Suggest playback mode based on difficulty. */
+function suggestMode(difficulty: Difficulty): { mode: string; reason: string } {
+  switch (difficulty) {
+    case "beginner":
+      return { mode: "measure", reason: "Step through one measure at a time for careful learning" };
+    case "intermediate":
+      return { mode: "hands", reason: "Practice hands separately before combining" };
+    case "advanced":
+      return { mode: "hands", reason: "Master each hand individually for complex passages" };
+    default:
+      return { mode: "full", reason: "Play straight through at tempo" };
+  }
+}
 
 // ─── Server ─────────────────────────────────────────────────────────────────
 
 const server = new McpServer({
   name: "piano-sessions-ai",
-  version: "0.1.0",
+  version: "0.2.0",
 });
 
 // ─── Tool: list_songs ───────────────────────────────────────────────────────
@@ -86,6 +115,9 @@ server.tool(
     }
 
     const ml = song.musicalLanguage;
+    const { speed, label: speedLabel } = suggestSpeed(song.difficulty as Difficulty);
+    const { mode, reason: modeReason } = suggestMode(song.difficulty as Difficulty);
+
     const text = [
       `# ${song.title}`,
       `**Composer:** ${song.composer ?? "Traditional"}`,
@@ -107,6 +139,12 @@ server.tool(
       ``,
       `## Style Tips`,
       ...ml.styleTips.map((st) => `- ${st}`),
+      ``,
+      `## Practice Suggestions`,
+      `- **Suggested speed:** ${speedLabel} → effective tempo: ${Math.round(song.tempo * speed)} BPM`,
+      `- **Suggested mode:** ${mode} — ${modeReason}`,
+      `- **Voice coaching:** Enable voice feedback for teaching notes at measure boundaries`,
+      `- Use \`practice_setup "${song.id}"\` for a full practice configuration`,
       ``,
       `**Tags:** ${song.tags.join(", ")}`,
     ].join("\n");
@@ -255,6 +293,12 @@ server.tool(
     const end = Math.min((endMeasure ?? song.measures.length) - 1, song.measures.length - 1);
     const measures = song.measures.slice(start, end + 1);
 
+    // Check for parse warnings
+    const warnings: ParseWarning[] = [];
+    for (const m of measures) {
+      safeParseMeasure(m, song.tempo, warnings);
+    }
+
     const lines = [`# ${song.title} — Measures ${start + 1} to ${end + 1}`, ``];
     for (const m of measures) {
       lines.push(`## Measure ${m.number}`);
@@ -264,6 +308,98 @@ server.tool(
       if (m.dynamics) lines.push(`Dynamics: ${m.dynamics}`);
       if (m.teachingNote) lines.push(`Note: ${m.teachingNote}`);
       lines.push(``);
+    }
+
+    if (warnings.length > 0) {
+      lines.push(`## ⚠ Parse Warnings`);
+      lines.push(`${warnings.length} note(s) could not be parsed and will be skipped during playback:`);
+      for (const w of warnings.slice(0, 10)) {
+        lines.push(`- ${w.location}: "${w.token}" — ${w.message}`);
+      }
+      if (warnings.length > 10) {
+        lines.push(`- … and ${warnings.length - 10} more`);
+      }
+      lines.push(``);
+    }
+
+    return { content: [{ type: "text", text: lines.join("\n") }] };
+  }
+);
+
+// ─── Tool: practice_setup ──────────────────────────────────────────────────
+
+server.tool(
+  "practice_setup",
+  "Get a recommended practice configuration for a song — speed, mode, voice settings, and CLI command. Tailored to the song's difficulty and teaching goals.",
+  {
+    id: z.string().describe("Song ID"),
+    playerLevel: z.enum(["beginner", "intermediate", "advanced"]).optional()
+      .describe("Player's skill level (overrides song-based suggestion)"),
+  },
+  async ({ id, playerLevel }) => {
+    const song = getSong(id);
+    if (!song) {
+      return {
+        content: [{ type: "text", text: `Song not found: "${id}". Use list_songs to see available songs.` }],
+        isError: true,
+      };
+    }
+
+    // Determine practice parameters
+    const effectiveDifficulty = (playerLevel ?? song.difficulty) as Difficulty;
+    const { speed, label: speedLabel } = suggestSpeed(effectiveDifficulty);
+    const { mode, reason: modeReason } = suggestMode(effectiveDifficulty);
+    const effectiveTempo = Math.round(song.tempo * speed);
+
+    // Check for parse warnings
+    const warnings: ParseWarning[] = [];
+    for (const m of song.measures) {
+      safeParseMeasure(m, effectiveTempo, warnings);
+    }
+
+    const ml = song.musicalLanguage;
+    const lines = [
+      `# Practice Setup: ${song.title}`,
+      ``,
+      `## Song Profile`,
+      `- **Difficulty:** ${song.difficulty}`,
+      `- **Base tempo:** ${song.tempo} BPM`,
+      `- **Measures:** ${song.measures.length}`,
+      `- **Key:** ${song.key} | **Time:** ${song.timeSignature}`,
+      ``,
+      `## Recommended Settings`,
+      `- **Speed:** ${speedLabel}`,
+      `- **Effective tempo:** ${effectiveTempo} BPM`,
+      `- **Mode:** ${mode} — ${modeReason}`,
+      `- **Voice coaching:** Enabled — speak teaching notes + key moments`,
+      ``,
+      `## CLI Command`,
+      `\`\`\``,
+      `piano-ai play ${song.id} --speed ${speed} --mode ${mode}`,
+      `\`\`\``,
+      ``,
+      `## Practice Progression`,
+      `1. Start at ${speedLabel} in **${mode}** mode`,
+      `2. Focus on key moments:`,
+      ...ml.keyMoments.slice(0, 3).map((km) => `   - ${km}`),
+      `3. Gradually increase speed: ${speed} → ${Math.min(speed + 0.25, 1.0)} → 1.0`,
+      `4. Switch to **full** mode once comfortable at speed`,
+    ];
+
+    if (song.difficulty === "advanced") {
+      lines.push(
+        `5. Try **loop** mode on difficult passages`,
+        `   Example: \`piano-ai play ${song.id} --mode loop\``
+      );
+    }
+
+    if (warnings.length > 0) {
+      lines.push(
+        ``,
+        `## ⚠ Note`,
+        `${warnings.length} note(s) have parse warnings and will be skipped during playback.`,
+        `Use \`list_measures "${song.id}"\` to see details.`
+      );
     }
 
     return { content: [{ type: "text", text: lines.join("\n") }] };
