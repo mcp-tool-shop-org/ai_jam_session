@@ -2,9 +2,9 @@
 
 MCP server + CLI for AI-powered piano teaching — plays through VMPK via MIDI with voice feedback.
 
-[![Tests](https://img.shields.io/badge/tests-101_passing-brightgreen)](https://github.com/mcp-tool-shop-org/piano-ai)
+[![Tests](https://img.shields.io/badge/tests-121_passing-brightgreen)](https://github.com/mcp-tool-shop-org/piano-ai)
 [![Smoke](https://img.shields.io/badge/smoke-20_passing-brightgreen)](https://github.com/mcp-tool-shop-org/piano-ai)
-[![MCP Tools](https://img.shields.io/badge/MCP_tools-6-purple)](https://github.com/mcp-tool-shop-org/piano-ai)
+[![MCP Tools](https://img.shields.io/badge/MCP_tools-7-purple)](https://github.com/mcp-tool-shop-org/piano-ai)
 [![Songs](https://img.shields.io/badge/songs-10_(via_ai--music--sheets)-blue)](https://github.com/mcp-tool-shop-org/ai-music-sheets)
 
 ## What is this?
@@ -60,16 +60,17 @@ node dist/cli.js play dream-on --speed 0.75 --mode hands
 
 ## MCP Server
 
-The MCP server exposes 6 tools for LLM integration:
+The MCP server exposes 7 tools for LLM integration:
 
 | Tool | Description |
 |------|-------------|
 | `list_songs` | Browse/search songs by genre, difficulty, or query |
-| `song_info` | Get full musical language, teaching goals, key moments |
+| `song_info` | Get full musical language, teaching goals, practice suggestions |
 | `registry_stats` | Song counts by genre and difficulty |
 | `teaching_note` | Per-measure teaching note, fingering, dynamics |
 | `suggest_song` | Get a recommendation based on criteria |
-| `list_measures` | Overview of measures with teaching notes |
+| `list_measures` | Overview of measures with teaching notes + parse warnings |
+| `practice_setup` | Suggest speed, mode, and voice settings for a song |
 
 ```bash
 # Start the MCP server (stdio transport)
