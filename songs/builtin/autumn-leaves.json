@@ -1,0 +1,100 @@
+{
+  "id": "autumn-leaves",
+  "title": "Autumn Leaves",
+  "genre": "jazz",
+  "composer": "Joseph Kosma",
+  "arranger": "Simplified piano arrangement",
+  "difficulty": "intermediate",
+  "key": "G major",
+  "tempo": 120,
+  "timeSignature": "4/4",
+  "durationSeconds": 60,
+  "tags": [
+    "jazz-standard",
+    "ii-V-I",
+    "ballad",
+    "real-book",
+    "swing"
+  ],
+  "source": "Traditional jazz standard — simplified lead sheet arrangement",
+  "musicalLanguage": {
+    "description": "The quintessential jazz standard for learning ii-V-I progressions. The A section descends through the circle of fifths in G major (Cm7-F7-BbM7-EbM7), then the B section mirrors the same motion in E minor. Every jazz musician knows this tune — it's the 'Hello World' of jazz harmony.",
+    "structure": "AABA — 32 bars (this excerpt: first A section, 8 bars)",
+    "keyMoments": [
+      "Bars 1-2: Cm7 to F7 — the ii-V in Bb major. Feel the pull toward resolution.",
+      "Bars 3-4: BbMaj7 to EbMaj7 — arrival, then the IV chord adds color",
+      "Bars 5-8: Am7b5 to D7 to Gm — the ii-V-i in G minor. The tune 'turns the corner' here."
+    ],
+    "teachingGoals": [
+      "ii-V-I voice leading — the smoothest path between chords",
+      "Swing eighth notes — long-short feel, not straight",
+      "Left-hand shell voicings: root + 7th (or 3rd + 7th) for each chord"
+    ],
+    "styleTips": [
+      "Swing feel — triplet-based eighths, emphasis on beats 2 and 4",
+      "Melody in the right hand should be legato and vocal",
+      "Left hand: keep shell voicings in the middle register, not too low"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "C5:h A4:q G4:q",
+      "leftHand": "C3:q Bb3:q",
+      "fingering": "RH: 5-3-2, LH: 1-2 (Cm7 shell)",
+      "teachingNote": "Cm7 chord — the ii of Bb. Left hand plays root + 7th shell voicing.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 2,
+      "rightHand": "F4:h D4:q C4:q",
+      "leftHand": "F2:q E3:q",
+      "fingering": "RH: 4-2-1, LH: 1-2 (F7 shell)",
+      "teachingNote": "F7 — the V of Bb. Notice how the melody descends stepwise."
+    },
+    {
+      "number": 3,
+      "rightHand": "Bb4:h G4:q F4:q",
+      "leftHand": "Bb2:q A3:q",
+      "fingering": "RH: 5-3-2, LH: 1-2 (BbM7 shell)",
+      "teachingNote": "BbMaj7 — resolution! The ii-V has arrived. Let it ring."
+    },
+    {
+      "number": 4,
+      "rightHand": "Eb4:h C4:q Bb3:q",
+      "leftHand": "Eb2:q D3:q",
+      "fingering": "RH: 4-2-1, LH: 1-2 (EbM7 shell)",
+      "teachingNote": "EbMaj7 — the IV chord. It adds warmth before the tune shifts to minor."
+    },
+    {
+      "number": 5,
+      "rightHand": "A4:h F4:q E4:q",
+      "leftHand": "A2:q G3:q",
+      "fingering": "RH: 5-3-2, LH: 1-2 (Am7b5 shell)",
+      "teachingNote": "Am7b5 — half-diminished. This is the ii of G minor. Feel the mood darken.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 6,
+      "rightHand": "D4:h B3:q A3:q",
+      "leftHand": "D2:q C3:q",
+      "fingering": "RH: 4-2-1, LH: 1-2 (D7 shell)",
+      "teachingNote": "D7 — the V of G minor. The F# in this chord pulls hard toward G."
+    },
+    {
+      "number": 7,
+      "rightHand": "G4:h Bb4:q A4:q",
+      "leftHand": "G2:q Bb2:q",
+      "fingering": "RH: 3-5-4, LH: 1-3 (Gm shell)",
+      "teachingNote": "Gm — minor resolution. The whole section was a journey through the circle of fifths."
+    },
+    {
+      "number": 8,
+      "rightHand": "G4:w",
+      "leftHand": "G2:h D3:h",
+      "fingering": "RH: 3, LH: 1-5",
+      "teachingNote": "Let the G ring out. In performance, this is where you'd start improvising.",
+      "dynamics": "p"
+    }
+  ]
+}

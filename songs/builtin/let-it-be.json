@@ -1,0 +1,101 @@
+{
+  "id": "let-it-be",
+  "title": "Let It Be",
+  "genre": "pop",
+  "composer": "John Lennon & Paul McCartney",
+  "arranger": "Simplified piano arrangement",
+  "difficulty": "beginner",
+  "key": "C major",
+  "tempo": 76,
+  "timeSignature": "4/4",
+  "durationSeconds": 60,
+  "tags": [
+    "beatles",
+    "ballad",
+    "beginner-friendly",
+    "iconic",
+    "chord-progression"
+  ],
+  "source": "Simplified arrangement of the verse section",
+  "musicalLanguage": {
+    "description": "One of the most beginner-friendly classic songs ever written. The verse uses just four chords (C-G-Am-F) in the most common pop progression of all time. The gentle tempo and repetitive structure make it ideal for a first 'real song' on piano.",
+    "structure": "Verse (8 bars) — C-G-Am-F repeated twice",
+    "keyMoments": [
+      "Bars 1-2: C to G — the I-V movement. Simple, open, uplifting.",
+      "Bars 3-4: Am to F — the vi-IV movement. This is where the emotion lives.",
+      "Bars 5-8: The same progression repeats — lock in the muscle memory."
+    ],
+    "teachingGoals": [
+      "Basic chord shapes in root position: C, G, Am, F",
+      "Smooth chord transitions without pausing between changes",
+      "Simple right-hand melody over left-hand chords"
+    ],
+    "styleTips": [
+      "Gentle, hymn-like feel — no rushing",
+      "Let each chord ring before moving to the next",
+      "Right hand melody should float above the chords, soft and vocal"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "E4:q E4:q D4:q E4:q",
+      "leftHand": "C3:q E3:q G3:q E3:q",
+      "fingering": "RH: 3-3-2-3, LH: 1-3-5-3 (C major broken)",
+      "teachingNote": "C major — home base. Let the left hand gently arpeggiate while the right sings.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 2,
+      "rightHand": "D4:h D4:q B3:q",
+      "leftHand": "G2:q B2:q D3:q B2:q",
+      "fingering": "RH: 2-2-1, LH: 1-3-5-3 (G major broken)",
+      "teachingNote": "G major — the V chord. Notice how the melody steps down naturally."
+    },
+    {
+      "number": 3,
+      "rightHand": "C4:q C4:q C4:q D4:q",
+      "leftHand": "A2:q C3:q E3:q C3:q",
+      "fingering": "RH: 1-1-1-2, LH: 1-3-5-3 (Am broken)",
+      "teachingNote": "A minor — the relative minor. Same notes as C major, different root. Feel the shift."
+    },
+    {
+      "number": 4,
+      "rightHand": "C4:h R:h",
+      "leftHand": "F2:q A2:q C3:q A2:q",
+      "fingering": "RH: 1, LH: 1-3-5-3 (F major broken)",
+      "teachingNote": "F major — the IV chord. Let the right hand rest while the left hand carries the harmony.",
+      "dynamics": "p"
+    },
+    {
+      "number": 5,
+      "rightHand": "E4:q E4:q D4:q E4:q",
+      "leftHand": "C3:q E3:q G3:q E3:q",
+      "fingering": "RH: 3-3-2-3, LH: 1-3-5-3",
+      "teachingNote": "Back to C — the second time through should feel more confident.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 6,
+      "rightHand": "D4:h D4:q B3:q",
+      "leftHand": "G2:q B2:q D3:q B2:q",
+      "fingering": "RH: 2-2-1, LH: 1-3-5-3",
+      "teachingNote": "G again — you know this shape now. Focus on the transition from C."
+    },
+    {
+      "number": 7,
+      "rightHand": "C4:q C4:q C4:q D4:q",
+      "leftHand": "A2:q C3:q E3:q C3:q",
+      "fingering": "RH: 1-1-1-2, LH: 1-3-5-3",
+      "teachingNote": "Am — same as bar 3. Your hands should find this automatically now."
+    },
+    {
+      "number": 8,
+      "rightHand": "C4:w",
+      "leftHand": "F2:q A2:q C3:h",
+      "fingering": "RH: 1, LH: 1-3-5",
+      "teachingNote": "F major — hold the final C. You just played the most famous chord progression in pop music.",
+      "dynamics": "p"
+    }
+  ]
+}

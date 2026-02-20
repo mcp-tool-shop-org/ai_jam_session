@@ -16,7 +16,8 @@ import {
   getSong,
   getStats,
   searchSongs,
-} from "@mcptoolshop/ai-music-sheets";
+  initializeRegistry,
+} from "./songs/index.js";
 import { createSession } from "./session.js";
 import { createMockVmpkConnector } from "./vmpk.js";
 import { parseNoteToMidi, midiToNoteName, safeParseNoteToken } from "./note-parser.js";
@@ -74,8 +75,15 @@ function assert(condition: boolean, msg: string): void {
 
 console.log("\n pianoai smoke test\n");
 
-// ─── Test 1: ai-music-sheets loads ──────────────────────────────────────────
-console.log("ai-music-sheets integration:");
+// ─── Initialize song registry from builtin JSON files ───────────────────────
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const builtinDir = join(__dirname, "..", "songs", "builtin");
+initializeRegistry(builtinDir);
+
+// ─── Test 1: song library loads ─────────────────────────────────────────────
+console.log("song library integration:");
 test("registry loads 10 songs", () => {
   assert(getAllSongs().length === 10, "expected 10 songs");
 });

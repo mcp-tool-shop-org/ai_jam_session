@@ -1,0 +1,100 @@
+{
+  "id": "dream-on",
+  "title": "Dream On (Piano Intro)",
+  "genre": "rock",
+  "composer": "Steven Tyler",
+  "arranger": "Piano reduction of the intro",
+  "difficulty": "intermediate",
+  "key": "F minor",
+  "tempo": 80,
+  "timeSignature": "4/4",
+  "durationSeconds": 45,
+  "tags": [
+    "aerosmith",
+    "classic-rock",
+    "arpeggios",
+    "dramatic",
+    "intro"
+  ],
+  "source": "Piano arrangement of the iconic intro section",
+  "musicalLanguage": {
+    "description": "The piano intro to Aerosmith's 'Dream On' is one of rock's great piano moments. Descending arpeggios over a chromatic bass line create mounting drama. The pattern is deceptively simple — broken chords moving down by half-steps — but the emotional effect is enormous.",
+    "structure": "Intro sequence: descending chromatic bass with arpeggiated chords (8 bars)",
+    "keyMoments": [
+      "Bars 1-2: Fm — the opening statement. Stark, dramatic, alone.",
+      "Bars 3-4: E major — a half-step down. The chromatic shift is unsettling.",
+      "Bars 5-6: Eb — another half-step. The descent accelerates the drama.",
+      "Bars 7-8: Db to C7 — arrival at the dominant. Maximum tension before the verse."
+    ],
+    "teachingGoals": [
+      "Arpeggiated chord patterns with consistent rhythm",
+      "Chromatic bass line awareness — hearing the half-step descent",
+      "Dynamic build: starting quiet and growing through the intro"
+    ],
+    "styleTips": [
+      "Start very quietly — let the drama build naturally",
+      "Each chord change should feel like a step deeper into the song",
+      "Sustain pedal: change with each new chord"
+    ]
+  },
+  "measures": [
+    {
+      "number": 1,
+      "rightHand": "F4:e Ab4:e C5:e Ab4:e F4:e Ab4:e C5:e Ab4:e",
+      "leftHand": "F2:w",
+      "fingering": "RH: 1-3-5-3-1-3-5-3, LH: 5",
+      "teachingNote": "F minor — broken chord, up and back. This pattern defines the whole intro.",
+      "dynamics": "p"
+    },
+    {
+      "number": 2,
+      "rightHand": "F4:e Ab4:e C5:e Ab4:e F4:e Ab4:e C5:e Ab4:e",
+      "leftHand": "F2:w",
+      "teachingNote": "Same pattern — let it settle. The audience is listening."
+    },
+    {
+      "number": 3,
+      "rightHand": "E4:e G#4:e B4:e G#4:e E4:e G#4:e B4:e G#4:e",
+      "leftHand": "E2:w",
+      "fingering": "RH: 1-3-5-3-1-3-5-3, LH: 5",
+      "teachingNote": "E major — one half-step down in the bass. The chromatic descent has begun.",
+      "dynamics": "mp"
+    },
+    {
+      "number": 4,
+      "rightHand": "E4:e G#4:e B4:e G#4:e E4:e G#4:e B4:e G#4:e",
+      "leftHand": "E2:w",
+      "teachingNote": "Second bar of E major. Feel the contrast with F minor — brighter but tense."
+    },
+    {
+      "number": 5,
+      "rightHand": "Eb4:e G4:e Bb4:e G4:e Eb4:e G4:e Bb4:e G4:e",
+      "leftHand": "Eb2:w",
+      "fingering": "RH: 1-3-5-3-1-3-5-3, LH: 5",
+      "teachingNote": "Eb major — another half-step down. The pattern is relentless now.",
+      "dynamics": "mf"
+    },
+    {
+      "number": 6,
+      "rightHand": "Eb4:e G4:e Bb4:e G4:e Eb4:e G4:e Bb4:e G4:e",
+      "leftHand": "Eb2:w",
+      "teachingNote": "Ride the crescendo. Each chord change adds urgency."
+    },
+    {
+      "number": 7,
+      "rightHand": "Db4:e F4:e Ab4:e F4:e Db4:e F4:e Ab4:e F4:e",
+      "leftHand": "Db2:w",
+      "fingering": "RH: 1-3-5-3-1-3-5-3, LH: 5",
+      "teachingNote": "Db major — almost at the bottom of the descent. Build the intensity.",
+      "dynamics": "f"
+    },
+    {
+      "number": 8,
+      "rightHand": "C4:e E4:e G4:e Bb4:e C4:e E4:e G4:e Bb4:e",
+      "leftHand": "C2:w",
+      "fingering": "RH: 1-3-5-5-1-3-5-5, LH: 5",
+      "teachingNote": "C7 — the dominant of F minor. Maximum tension. The verse is about to explode.",
+      "dynamics": "ff"
+    }
+  ]
+}
