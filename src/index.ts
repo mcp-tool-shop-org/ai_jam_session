@@ -51,6 +51,9 @@ export {
   createSilentTeachingHook,
   createRecordingTeachingHook,
   createCallbackTeachingHook,
+  createVoiceTeachingHook,
+  createAsideTeachingHook,
+  composeTeachingHooks,
   detectKeyMoments,
 } from "./teaching.js";
 
@@ -71,6 +74,10 @@ export type {
   TeachingHook,
   TeachingInterjection,
   TeachingPriority,
+  VoiceDirective,
+  VoiceSink,
+  AsideDirective,
+  AsideSink,
 } from "./types.js";
 
 export { DURATION_MAP, NOTE_OFFSETS } from "./types.js";

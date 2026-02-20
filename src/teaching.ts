@@ -9,7 +9,15 @@
 //   - CallbackTeachingHook: routes to custom callbacks (MCP/voice/aside)
 // ─────────────────────────────────────────────────────────────────────────────
 
-import type { TeachingHook, TeachingInterjection, TeachingPriority } from "./types.js";
+import type {
+  TeachingHook,
+  TeachingInterjection,
+  TeachingPriority,
+  VoiceDirective,
+  VoiceSink,
+  AsideDirective,
+  AsideSink,
+} from "./types.js";
 import type { SongEntry } from "ai-music-sheets";
 
 // ─── Console Hook (CLI / development) ───────────────────────────────────────
@@ -128,6 +136,225 @@ export function createCallbackTeachingHook(callbacks: TeachingCallbacks): Teachi
     },
     async push(interjection) {
       await callbacks.onPush?.(interjection);
+    },
+  };
+}
+
+// ─── Voice Hook (mcp-voice-soundboard) ──────────────────────────────────────
+
+/** Options for the voice teaching hook. */
+export interface VoiceHookOptions {
+  /** Voice preset name for teaching (default: undefined = server default). */
+  voice?: string;
+
+  /** Speech speed (default: 1.0). */
+  speechSpeed?: number;
+
+  /** Speak teaching notes at measure start (default: true). */
+  speakTeachingNotes?: boolean;
+
+  /** Speak key moments (default: true). */
+  speakKeyMoments?: boolean;
+
+  /** Speak completion message (default: true). */
+  speakCompletion?: boolean;
+
+  /** Block playback while speaking (default: false for notes, true for key moments). */
+  blockOnKeyMoments?: boolean;
+}
+
+/**
+ * Voice teaching hook — produces VoiceDirective objects routed to a VoiceSink.
+ *
+ * The sink can be:
+ * - A real mcp-voice-soundboard call (via LLM tool routing)
+ * - A console.log wrapper (for CLI testing)
+ * - A recording array (for unit tests)
+ *
+ * Also records all directives for inspection.
+ */
+export function createVoiceTeachingHook(
+  sink: VoiceSink,
+  options: VoiceHookOptions = {}
+): TeachingHook & { directives: VoiceDirective[] } {
+  const {
+    voice,
+    speechSpeed = 1.0,
+    speakTeachingNotes = true,
+    speakKeyMoments = true,
+    speakCompletion = true,
+    blockOnKeyMoments = true,
+  } = options;
+
+  const directives: VoiceDirective[] = [];
+
+  async function emit(directive: VoiceDirective): Promise<void> {
+    directives.push(directive);
+    await sink(directive);
+  }
+
+  return {
+    directives,
+
+    async onMeasureStart(measureNumber, teachingNote, dynamics) {
+      if (!speakTeachingNotes || !teachingNote) return;
+
+      const dynamicsPart = dynamics ? ` Play ${dynamics}.` : "";
+      await emit({
+        text: `Measure ${measureNumber}.${dynamicsPart} ${teachingNote}`,
+        voice,
+        speed: speechSpeed,
+        blocking: false, // don't block on routine notes
+      });
+    },
+
+    async onKeyMoment(moment) {
+      if (!speakKeyMoments) return;
+
+      await emit({
+        text: moment,
+        voice,
+        speed: speechSpeed,
+        blocking: blockOnKeyMoments,
+      });
+    },
+
+    async onSongComplete(measuresPlayed, songTitle) {
+      if (!speakCompletion) return;
+
+      await emit({
+        text: `Great work! You finished ${songTitle}. ${measuresPlayed} measures played.`,
+        voice,
+        speed: speechSpeed,
+        blocking: false,
+      });
+    },
+
+    async push(interjection) {
+      const urgency = interjection.priority === "high" ? "Important: " : "";
+      await emit({
+        text: `${urgency}${interjection.text}`,
+        voice,
+        speed: speechSpeed,
+        blocking: interjection.priority === "high",
+      });
+    },
+  };
+}
+
+// ─── Aside Hook (mcp-aside interjections) ───────────────────────────────────
+
+/** Options for the aside teaching hook. */
+export interface AsideHookOptions {
+  /** Push teaching notes to aside (default: true). */
+  pushTeachingNotes?: boolean;
+
+  /** Push key moments to aside (default: true). */
+  pushKeyMoments?: boolean;
+
+  /** Push completion to aside (default: true). */
+  pushCompletion?: boolean;
+
+  /** Base tags added to all directives. */
+  baseTags?: string[];
+}
+
+/**
+ * Aside teaching hook — produces AsideDirective objects routed to an AsideSink.
+ *
+ * The sink can be:
+ * - A real mcp-aside push (via aside_push tool)
+ * - A recording array (for tests)
+ *
+ * Records all directives for inspection.
+ */
+export function createAsideTeachingHook(
+  sink: AsideSink,
+  options: AsideHookOptions = {}
+): TeachingHook & { directives: AsideDirective[] } {
+  const {
+    pushTeachingNotes = true,
+    pushKeyMoments = true,
+    pushCompletion = true,
+    baseTags = ["piano-teacher"],
+  } = options;
+
+  const directives: AsideDirective[] = [];
+
+  async function emit(directive: AsideDirective): Promise<void> {
+    directives.push(directive);
+    await sink(directive);
+  }
+
+  return {
+    directives,
+
+    async onMeasureStart(measureNumber, teachingNote, dynamics) {
+      if (!pushTeachingNotes || !teachingNote) return;
+
+      const dynamicsPart = dynamics ? ` (${dynamics})` : "";
+      await emit({
+        text: `Measure ${measureNumber}${dynamicsPart}: ${teachingNote}`,
+        priority: "low",
+        reason: "measure-start",
+        source: `measure-${measureNumber}`,
+        tags: [...baseTags, "teaching-note"],
+      });
+    },
+
+    async onKeyMoment(moment) {
+      if (!pushKeyMoments) return;
+
+      await emit({
+        text: moment,
+        priority: "med",
+        reason: "key-moment",
+        tags: [...baseTags, "key-moment"],
+      });
+    },
+
+    async onSongComplete(measuresPlayed, songTitle) {
+      if (!pushCompletion) return;
+
+      await emit({
+        text: `Finished "${songTitle}" — ${measuresPlayed} measures played.`,
+        priority: "low",
+        reason: "song-complete",
+        tags: [...baseTags, "completion"],
+      });
+    },
+
+    async push(interjection) {
+      await emit({
+        text: interjection.text,
+        priority: interjection.priority,
+        reason: interjection.reason,
+        source: interjection.source,
+        tags: [...baseTags, interjection.reason],
+      });
+    },
+  };
+}
+
+/**
+ * Compose multiple teaching hooks into one.
+ * Events are dispatched to all hooks in order (serially, not parallel).
+ *
+ * Example: combine a voice hook + aside hook + recording hook for full coverage.
+ */
+export function composeTeachingHooks(...hooks: TeachingHook[]): TeachingHook {
+  return {
+    async onMeasureStart(measureNumber, teachingNote, dynamics) {
+      for (const h of hooks) await h.onMeasureStart(measureNumber, teachingNote, dynamics);
+    },
+    async onKeyMoment(moment) {
+      for (const h of hooks) await h.onKeyMoment(moment);
+    },
+    async onSongComplete(measuresPlayed, songTitle) {
+      for (const h of hooks) await h.onSongComplete(measuresPlayed, songTitle);
+    },
+    async push(interjection) {
+      for (const h of hooks) await h.push(interjection);
     },
   };
 }

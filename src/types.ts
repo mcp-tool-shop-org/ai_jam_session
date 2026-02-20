@@ -236,6 +236,50 @@ export interface TeachingInterjection {
 }
 
 /**
+ * A voice directive — structured request to speak via mcp-voice-soundboard.
+ * The hook produces these; the caller (CLI, LLM, test) routes them to voice_speak.
+ */
+export interface VoiceDirective {
+  /** Text to speak. */
+  text: string;
+
+  /** Voice preset name (e.g. "narrator", "teacher"). */
+  voice?: string;
+
+  /** Speed multiplier for speech (0.5–2.0). */
+  speed?: number;
+
+  /** Whether to wait for speech to finish before continuing playback. */
+  blocking: boolean;
+}
+
+/** Callback that receives voice directives. */
+export type VoiceSink = (directive: VoiceDirective) => Promise<void>;
+
+/**
+ * An aside directive — structured request to push to mcp-aside inbox.
+ */
+export interface AsideDirective {
+  /** The text to display. */
+  text: string;
+
+  /** Priority level. */
+  priority: "low" | "med" | "high";
+
+  /** Why this was triggered. */
+  reason: string;
+
+  /** Source context (e.g. "measure-3", "key-moment"). */
+  source?: string;
+
+  /** Tags for filtering. */
+  tags?: string[];
+}
+
+/** Callback that receives aside directives. */
+export type AsideSink = (directive: AsideDirective) => Promise<void>;
+
+/**
  * Teaching hook interface — inject this into sessions to receive
  * teaching interjections during playback. Implementations can route
  * to mcp-voice-soundboard, mcp-aside, console, or anything else.
