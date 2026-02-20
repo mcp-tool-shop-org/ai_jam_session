@@ -60,6 +60,13 @@ export {
   detectKeyMoments,
 } from "./teaching.js";
 
+export type {
+  TeachingEvent,
+  TeachingCallbacks,
+  VoiceHookOptions,
+  AsideHookOptions,
+} from "./teaching.js";
+
 // Export types
 export type {
   Session,
