@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "tsconfig.json"
+      - "src/**"
+      - ".github/workflows/**"
+    branches: [main]
+  pull_request:
+    paths:
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "tsconfig.json"
+      - "src/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+      - name: Smoke
+        run: pnpm smoke
